@@ -1,0 +1,37 @@
+{
+    "name": "study-buddy-4000",
+    "version": "1.0.0",
+    "description": "file-tree:",
+    "main": "webpack.config.js",
+    "scripts": {
+        "start": "cross-env NODE_ENV=production node server/server.js",
+        "build": "cross-env NODE_ENV=production webpack",
+        "dev": "cross-env NODE_ENV=development concurrently \"webpack serve\" \"nodemon server/server.js\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CourageWolf/study-buddy-4000.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.10",
+        "@babel/preset-react": "^7.12.10",
+        "babel-loader": "^8.2.2",
+        "css-loader": "^5.0.1",
+        "nodemon": "^2.0.6",
+        "style-loader": "^2.0.0",
+        "webpack": "^5.10.3",
+        "webpack-cli": "^4.2.0",
+        "webpack-dev-server": "^3.11.0",
+        "concurrently": "^5.3.0",
+        "cross-env": "^7.0.3"
+    },
+    "dependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "express": "^4.12.3"
+    }
+}
