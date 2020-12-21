@@ -3,9 +3,10 @@ const app = express();
 const path = require("path");
 const PORT = 3000;
 
+const apiRouter = require('./routes/api');
+
 // const apiRouter = require("./routes/route.js");
 const bodyParser = require("body-parser");
-
 
 //parse request body
 app.use(bodyParser.json());
