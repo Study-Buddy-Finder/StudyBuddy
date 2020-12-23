@@ -51,6 +51,7 @@ CREATE TABLE public.schools (
 CREATE TABLE public.users (
     "user_id" serial NOT NULL,
     "user_name" varchar NOT NULL,
+    "user_password" varchar NOT NULL,
     "user_join_date" varchar NOT NULL,
     PRIMARY KEY ("user_id")
 ) WITH (
@@ -101,10 +102,10 @@ ALTER TABLE public.events ADD CONSTRAINT fk_class FOREIGN KEY ("class_id") REFER
 
 --------- Add dummy data --------
 
-INSERT INTO public.users (user_name, user_join_date) VALUES ('Ali', '12/21/2020');
-INSERT INTO public.users (user_name, user_join_date) VALUES ('Will', '12/21/2020');
-INSERT INTO public.users (user_name, user_join_date) VALUES ('Vince', '12/21/2020');
-INSERT INTO public.users (user_name, user_join_date) VALUES ('Heidi', '12/21/2020');
+INSERT INTO public.users (user_name, user_password, user_join_date) VALUES ('Ali', 'something', '12/21/2020');
+INSERT INTO public.users (user_name, user_password, user_join_date) VALUES ('Will', 'something', '12/21/2020');
+INSERT INTO public.users (user_name, user_password, user_join_date) VALUES ('Vince', 'something', '12/21/2020');
+INSERT INTO public.users (user_name, user_password, user_join_date) VALUES ('Heidi', 'something', '12/21/2020');
 
 
 INSERT INTO public.schools ("school_name", "school_location") VALUES ('Codesmith', 'Venice');

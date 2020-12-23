@@ -14,6 +14,8 @@ usersController.createUser = (req, res, next) => {
     .catch((err) => next(err));
 };
 
+
+
 //read
 usersController.getUser = (req, res, next) => {
   const params = [req.params.user_id];
@@ -38,6 +40,19 @@ usersController.getAllUsers = (req, res, next) => {
     })
     .catch((err) => next(err));
 };
+
+//authenticate name/password combo
+usersController.userAuth = (req, res, next) => {
+  const params = [req.body.user_name, req.body.user_password]
+  const queryText = "SELECT * FROM public.users WHERE user_id = $1 AND user_password = $2;";
+  db.query(queryText, params)
+  .then(result => {
+    res.locals.user = result.rows
+    return next();
+  })
+  .catch((err) => next(err));
+
+}
 
 //update
 usersController.updateUserName = (req, res, next) => {
