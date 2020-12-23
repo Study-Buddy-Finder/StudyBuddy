@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const apiRouter = require("./routes/api.js");
 const PORT = 3000;
 
 // const apiRouter = require("./routes/route.js");
@@ -14,15 +15,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
-// app.use('/api', apiRouter);
+
+// handle anything for api
+app.use("/api", apiRouter);
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
-
-app.post('/api/test', (req, res) => {
-  res.send('received')
-})
 
 //catch all
 app.use((req, res) => res.sendStatus(404));
