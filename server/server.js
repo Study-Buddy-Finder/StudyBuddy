@@ -14,10 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
-
-// handle anything for api
-app.use("/api", apiRouter);
-
+// app.use('/api', apiRouter);
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
