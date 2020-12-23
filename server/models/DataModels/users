@@ -1,0 +1,29 @@
+////users table creation
+////run postgresql
+psql -U postgres -W
+
+///create user table
+CREATE TABLE public.users (
+    "user_id" serial NOT NULL,
+    "user_name" varchar NOT NULL,
+    "user_join_date" varchar NOT NULL,
+    PRIMARY KEY ("user_id")
+) WITH (
+    OIDS=FALSE
+);
+
+
+///Add user 
+INSERT INTO public.users (user_name, user_join_date) VALUES ('Will', '12/21/2020');
+
+///Query all users
+SELECT * FROM public.users LIMIT 100;
+
+///Query for user by id
+SELECT * FROM public.users WHERE user_id = 1;
+
+///Delete user at id 
+DELETE FROM public.users WHERE user_id = 1;
+
+////update user based on user.id
+UPDATE public.users SET user_name = 'Josh' WHERE  user_id = 1;

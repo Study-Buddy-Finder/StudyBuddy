@@ -1,0 +1,21 @@
+///Schools table creation
+CREATE TABLE public.schools (
+    "school_id" serial NOT NULL,
+    "school_name" varchar NOT NULL,
+    "school_location" varchar NOT NULL,
+    PRIMARY KEY ("school_id")
+) WITH (
+    OIDS=FALSE
+);
+
+///Add school
+INSERT INTO public.schools ("school_name", "location") VALUES ('Caltech', 'Pasadena');
+
+///Query all schools
+SELECT * FROM "public"."users" LIMIT 100;
+
+///Query for school by id
+SELECT * FROM public.schools WHERE school_id = 1;
+
+///Delete school at id 
+DELETE FROM public.schools WHERE school_id = 1;

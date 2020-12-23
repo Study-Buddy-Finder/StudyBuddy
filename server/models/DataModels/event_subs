@@ -1,0 +1,19 @@
+///Create table for User-School relationship
+CREATE TABLE public.eventsubs (
+    "eventsub_id" serial NOT NULL,
+    "user_id" INT,
+    "event_id" INT,
+    PRIMARY KEY ("eventsub_id")
+) WITH (
+    OIDS=FALSE
+);
+
+//add foreign keys from parents users and schools
+ALTER TABLE public.eventsubs ADD CONSTRAINT fk_event FOREIGN KEY ("event_id") REFERENCES  public.events("event_id");
+ALTER TABLE public.eventsubs ADD CONSTRAINT fk_user FOREIGN KEY ("user_id") REFERENCES  public.users("user_id");
+
+///Add subscription from user[1] to event[1]
+INSERT INTO public.eventsubs (user_id, event_id) VALUES (1, 1);
+
+///Delete subscription from user[1] to event[1]
+DELETE FROM public.eventsubs WHERE user_id = 1 AND event_id = 1;

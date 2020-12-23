@@ -1,0 +1,19 @@
+///Create table for User-School relationship
+CREATE TABLE public.schoolsubs (
+    "schoolsub_id" serial NOT NULL,
+    "user_id" INT,
+    "school_id" INT,
+    PRIMARY KEY ("schoolsub_id")
+) WITH (
+    OIDS=FALSE
+);
+
+//add foreign keys from parents users and schools
+ALTER TABLE public.schoolsubs ADD CONSTRAINT fk_school FOREIGN KEY ("school_id") REFERENCES  public.schools("school_id");
+ALTER TABLE public.schoolsubs ADD CONSTRAINT fk_user FOREIGN KEY ("user_id") REFERENCES  public.users("user_id");
+
+///Add subscription from user[1] to school[1]
+INSERT INTO public.schoolsubs (user_id, school_id) VALUES (1, 1);
+
+///Delete subscription from user[1] to school[1]
+DELETE FROM public.schoolsubs WHERE user_id = 1 AND school_id = 1;

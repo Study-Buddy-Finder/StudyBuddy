@@ -1,0 +1,28 @@
+////users table creation
+CREATE TABLE public.events (
+    "event_id" serial NOT NULL,
+    "event_name" varchar NOT NULL,
+    "event_location" varchar NOT NULL,
+    "class_id" INT,
+    PRIMARY KEY ("event_id")
+) WITH (
+    OIDS=FALSE
+);
+
+//add foreign keys from parent class
+ALTER TABLE public.events ADD CONSTRAINT fk_class FOREIGN KEY ("class_id") REFERENCES  public.classes("class_id");
+
+///Add event 
+INSERT INTO public.events (event_name, event_location, class_id) VALUES ('study party', 'starbucks', 1);
+
+///Query all events
+SELECT * FROM public.event LIMIT 100;
+
+///Query for event by id
+SELECT * FROM public.events WHERE event_id = 1;
+
+///Delete event at id 
+DELETE FROM public.events WHERE event_id = 1;
+
+////update event based on event.id
+UPDATE public.events SET location = 'somewhere new' WHERE  event_id = 1;
