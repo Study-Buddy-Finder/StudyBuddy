@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Signup from './Signup'
 import Login from './Login'
 import { Switch, Route } from 'react-router-dom';
-import styles from '../styles.css'
+import styles from '../styles.css';
+import Homepage from './homepage';
 
 class App extends Component {
     constructor(props){
@@ -36,6 +37,7 @@ class App extends Component {
                <Switch>
                    <Route exact path= '/' component={Login} />
                    <Route exact path='/signup' component={Signup} />
+                   <Route exact path='/homepage' component = {Homepage}/>
                </Switch>
 
             </div>

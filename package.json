@@ -29,18 +29,13 @@
         "cross-env": "^7.0.3"
     },
     "dependencies": {
-<<<<<<< HEAD
+        "axios": "^0.21.1",
         "concurrently": "^5.3.0",
         "express": "^4.12.3",
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
-=======
-        "axios": "^0.21.1",
-        "express": "^4.12.3",
+        "pg": "^8.5.1",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "react-hook-form": "^6.13.1",
->>>>>>> 3728426d5c3cafcb19b209d74d4f0bdfe48b6ec1
         "react-router-dom": "^5.2.0"
     }
 }
