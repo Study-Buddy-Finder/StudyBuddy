@@ -30,6 +30,9 @@ module.exports = {
           },
       ]
   },
+  resolve : {
+    extensions: ['.js', '.jsx']
+  },
   devServer: {
     publicPath: '/build/',
     contentBase: path.join(__dirname, 'public/'),
