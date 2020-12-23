@@ -1,7 +1,59 @@
+.app {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 body {
-  background-color: pink;
+    background-color: pink;
 }
 
 .header {
-  border: red;
+    border: red;
 }
+
+.sidebar_container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(219, 181, 194)
+}
+
+.container {
+    display: flex;
+}
+
+ul.navbar_content {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: grey;
+    width: 100%;
+}
+
+
+/* ul.navbar_content {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: blue;
+} */
+
+
+/* li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+} */

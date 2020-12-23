@@ -4,8 +4,6 @@ const path = require("path");
 const apiRouter = require("./routes/api.js");
 const PORT = 3000;
 
-const apiRouter = require('./routes/api');
-
 // const apiRouter = require("./routes/route.js");
 const bodyParser = require("body-parser");
 
