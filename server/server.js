@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
+app.post('/api/test', (req, res) => {
+  res.send('received')
+})
+
 //catch all
 app.use((req, res) => res.sendStatus(404));
 
