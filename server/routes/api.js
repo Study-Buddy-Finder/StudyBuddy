@@ -25,7 +25,7 @@ router.get("/users/:user_id", usersController.getUser, (req, res) => {
 
 
 //------POST-----
-//post route for create user, set body.user_name and body.join_date
+//post route for create user, set body.user_name, body.user_password and body.join_date
 router.post("/users/", usersController.createUser, (req, res) => {
   return res.status(200).send("successfully created user");
 });
