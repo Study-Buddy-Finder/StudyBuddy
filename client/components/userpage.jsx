@@ -13,7 +13,7 @@ export default function Userpage (props){
       <div> Current Class: {subject} </div>
       <div> Upcoming Events: {events}  </div>
       <div>
-        <input type="text" className = "rough" value = {name} onChange={updateName}/>
+        <input type="text" className ="rough" value ={name} onChange={updateName}/>
         <button onClick={() => updateName(name = document.getElementsByClassName("rough").value)}>Change Name!</button>
       </div>
     </div>

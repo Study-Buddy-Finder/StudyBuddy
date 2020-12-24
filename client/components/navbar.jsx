@@ -5,18 +5,18 @@ export default class Navbar extends Component {
 
   render(){
     return(
-      <nav className="navbar">
-        <ul className = "nav-barcontent">
-          <li className ="navbar-item">
-            <Link to="/user">Home</Link>
+      <nav className="navbar_container">
+        <ul className = "navbar_content">
+          <li className ="navbar_item">
+            <Link to="/homepage">Home</Link>
           </li>
-          <li className ="navbar-item">
-          <Link to="/update">Update Info</Link>
+          <li className ="navbar_item">
+          <Link to="/user">Update Info</Link>
           </li>
-          <li className ="navbar-item">
+          <li className ="navbar_item">
           <Link to="/find">Find Buddy/Events</Link>
           </li>
-          <li className ="navbar-item">
+          <li className ="navbar_item">
           <Link to="/create">Create Event</Link>
           </li>
         </ul>
