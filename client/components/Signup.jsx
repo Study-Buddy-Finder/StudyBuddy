@@ -27,7 +27,7 @@ const Signup = () => {
       <label>Last Name</label>
       <input name="lname" ref={register} />
 
-     <label>Email Address</label>
+     <label>Email</label>
       <input name="email" ref={register} />
 
       <label>Password</label>
@@ -35,13 +35,13 @@ const Signup = () => {
 
       <label>School</label>
       <select name="school" ref={register}>
-        <option selected value="none">none</option>
+        <option selected value="">none</option>
         <option value="testschool">Test School</option>
       </select>
 
         <label>Class</label>
       <select name="class" ref={register}>
-        <option selected value="none"></option>
+        <option selected value=""></option>
         <option value="testclass">Test Class</option>
         </select>
 
