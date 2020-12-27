@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Signup from "./Signup";
 import Login from "./Login";
-import MainContainer from "./MainContainer";
-import CreateEvent from "./CreateEvent";
-import UserPage from "./UserPage";
-import UpdateUser from "./UpdateUser"
+import { Switch, Route } from "react-router-dom";
 import styles from "../styles.css";
+import Navbar from "./Navbar";
+import MainContainer from "./MainContainer";
+import Sidebar from "./Sidebar";
 
 class App extends Component {
   constructor(props) {
@@ -30,33 +30,19 @@ class App extends Component {
 
   //     )
   // }
-
+  
   render() {
     return (
       <div className = 'app'>
 
         <Switch>
 
-          <Route exact path="/">     
-          <div className="header">
-            <h1>Study Buddy 4000</h1>
-          </div>
-          <Login /> 
-          </Route>
-          <Route exact path="/signup">
-          <div className="header">
-            <h1>Study Buddy 4000</h1>
-          </div>
-          <Signup /> 
-          </Route>
-          <Route path="/home" component={MainContainer} />
-          <Route path="/user">
-            <MainContainer />
-            <UpdateUser />
-          </Route>
-          <Route exact path="/create">
-            <MainContainer />
-            <CreateEvent />
+          <Route path="/homepage">
+            <Navbar />
+            <div className = "container">
+                <Sidebar />
+                <MainContainer />
+            </div>
           </Route>
 
         </Switch>

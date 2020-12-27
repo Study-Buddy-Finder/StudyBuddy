@@ -17,7 +17,6 @@ function Signup() {
   const { register, handleSubmit } = useForm();
 
   return (
-
     <div className="signupPage">
       
       <div className="signupForm">
@@ -54,9 +53,7 @@ function Signup() {
         </form>
       </div>
     </div>
-
   )
-
 }
 
 export default Signup;

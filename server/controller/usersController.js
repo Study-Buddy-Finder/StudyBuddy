@@ -43,8 +43,8 @@ usersController.getAllUsers = (req, res, next) => {
 
 //authenticate name/password combo
 usersController.userAuth = (req, res, next) => {
-  const params = [req.body.user_name, req.body.user_password]
-  const queryText = "SELECT * FROM public.users WHERE user_id = $1 AND user_password = $2;";
+  const params = [req.params.user_name, req.params.user_password]
+  const queryText = "SELECT * FROM public.users WHERE user_name = $1 AND user_password = $2;";
   db.query(queryText, params)
   .then(result => {
     res.locals.user = result.rows
