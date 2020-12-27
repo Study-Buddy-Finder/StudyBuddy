@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-export default function UpdateUser (props){
+function UpdateUser (props){
   const [name,updateName] = useState('Vince');
   const [school, updateSchool] = useState('Codesmith');
   const [subject, updateClass] = useState(['FrontEnd ','React-hooks']);
@@ -30,3 +30,5 @@ export default function UpdateUser (props){
     </div>
   );
 }
+
+export default UpdateUser;

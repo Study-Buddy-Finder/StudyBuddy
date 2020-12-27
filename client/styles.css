@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+body {
+    background-image: url('/public/blueBG.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(97, 144, 182, 0.2);
+    background-blend-mode: lighten;
+}
+
+.header {
+    font-family: 'Limelight', cursive;
+    color: #457b9d;
+    background-color: #a8dadc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    text-align: center;
+    padding: 0;
+    text-shadow: 2px 2px #1e303b;
+    font-size: large;
+}
+
 .app {
     display: flex;
     justify-content: center;
@@ -5,55 +34,125 @@
     align-items: center;
 }
 
-body {
-    background-color: pink;
+
+.loginPage {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.header {
-    border: red;
+.loginBg {
+    /* background-image: url('/public/studying.jpg'); */
+    /* background-size: 300px 100px; */
+    border-radius: 0.625rem;
 }
 
-.sidebar_container {
+.loginForm {
+    width: 350px;
+    height: 350px;
+    width: 20rem;
+    padding: 3rem;
+    box-sizing: border-box;
+    background: rgba(3, 4, 5, 0.685);
+    /* background: #1d35575d; */
+    font-size: 20px;
+    color: #f1faee;
+    border-radius: 0.625rem;
+}
+
+.loginForm input {
+    width: 100%;
+    height: 25px;
+    border-radius: 1px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.submitBtn input {
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.signupPage {
+    margin-top: 20%;
+    width: 400px;
+    height: 500px;
+    width: 20rem;
+    padding: 3rem;
+    box-sizing: border-box;
+    background: rgba(3, 4, 5, 0.685);
+    border-radius: 2px;
+    font-size: 20px;
+    color: #f1faee;
+    border-radius: 0.625rem;
+}
+
+.signupPage input {
+    width: 100%;
+    height: 25px;
+    border-radius: 1px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    min-height: 80vh;
+    align-items: center;
+}
+
+.welcome {
+    font-family: 'Lilita One', cursive;
+    font-size: 40px;
+    position: fixed;
+    left: 20px;
+    top: 100px;
+    color: #a8dadc;
+    text-shadow: 2px 2px #457b9d;
+}
+
+.sidebar {
+ 
+}
+
+ul.userPage {
+    background-color: #f1faee;
     display: flex;
     flex-direction: column;
-    background-color: rgb(219, 181, 194)
-}
-
-.container {
-    display: flex;
-}
-
-ul.navbar_content {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: grey;
-    width: 100%;
-}
-
-
-/* ul.navbar_content {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: blue;
-} */
-
-
-/* li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+    justify-content: flex-end;
+    margin: 0.5rem;
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: #111;
+li.userDetails {
+    text-decoration: none;
+}
+
+
+/* .sidebar_container {
+    flex-direction: column;
+    background-color: rgb(219, 181, 194);  
 } */
+
+
+ul.navbar_content {
+    background-color: #f1faee;
+    position: fixed;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px 0 #1d3557;
+}
+
+li.navbar_item {
+    display: inline;
+    margin: 20px;
+    color: #e63946;
+    text-decoration: none;
+}

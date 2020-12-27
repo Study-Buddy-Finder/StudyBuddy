@@ -1,13 +1,12 @@
 import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 import Signup from "./Signup";
 import Login from "./Login";
-import { Switch, Route } from "react-router-dom";
-import styles from "../styles.css";
-import Navbar from "./navbar";
 import MainContainer from "./MainContainer";
-import Sidebar from "./Sidebar";
-import CreateEvent from "./createevent.jsx";
-import Userpage from "./userpage.jsx";
+import CreateEvent from "./CreateEvent";
+import UserPage from "./UserPage";
+import UpdateUser from "./UpdateUser"
+import styles from "../styles.css";
 
 class App extends Component {
   constructor(props) {
@@ -35,43 +34,33 @@ class App extends Component {
   render() {
     return (
       <div className = 'app'>
-        <div className="header">
-          <h1>Welcome to Study Buddy 4000</h1>
-        </div>
+
         <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/signup" component={Signup} />
 
-          <Route path="/homepage/">
-            <Navbar />
-            <div className = "container">
-                <Sidebar />
-                <MainContainer />
-            </div>
+          <Route exact path="/">     
+          <div className="header">
+            <h1>Study Buddy 4000</h1>
+          </div>
+          <Login /> 
           </Route>
-
-          <Route path="/user/">
-            <Navbar />
-            <div className = "container">
-                <Sidebar />
-                <Userpage />
-                <p>we in user</p>
-            </div>
+          <Route exact path="/signup">
+          <div className="header">
+            <h1>Study Buddy 4000</h1>
+          </div>
+          <Signup /> 
           </Route>
-
-          <Route path="/create/">
-            <Navbar />
-            <div className = "container">
-                <Sidebar />
-                <CreateEvent />
-                <p>we in create</p>
-            </div>
+          <Route path="/home" component={MainContainer} />
+          <Route path="/user">
+            <MainContainer />
+            <UpdateUser />
           </Route>
-
-
-
+          <Route exact path="/create">
+            <MainContainer />
+            <CreateEvent />
+          </Route>
 
         </Switch>
+
       </div>
     );
   }

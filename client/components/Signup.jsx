@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
-const Signup = () => {
+function Signup() {
 
   const onSubmit = (values) => {
     console.log(values)
@@ -11,51 +11,52 @@ const Signup = () => {
       // if successful:
       // changed loggedin state
       // redirect back to login
+      // <Redirect to="/homepage" />
   };
 
   const { register, handleSubmit } = useForm();
 
   return (
-    // <div>test signup</div>
-    <div className="signup">
 
-    <form onSubmit={handleSubmit(onSubmit)}>
-    <fieldset>
-      <label>First Name</label>
-      <input name="fname" ref={register} />
+    <div className="signupPage">
+      
+      <div className="signupForm">
 
-      <label>Last Name</label>
-      <input name="lname" ref={register} />
+        <form onSubmit={handleSubmit(onSubmit)}>
 
-     <label>Email</label>
-      <input name="email" ref={register} />
+          <label>Name</label>
+          <input name="fname" placeholder="First" ref={register} />
+          <input name="lname" placeholder="Last" ref={register} />
 
-      <label>Password</label>
-      <input name="password" ref={register} />
+          <label>Email</label>
+          <input name="email" type="email" ref={register} />
 
-      <label>School</label>
-      <select name="school" ref={register}>
-        <option selected value="">none</option>
-        <option value="testschool">Test School</option>
-      </select>
+          <label>Password</label>
+          <input name="password" type="password" ref={register} />
 
-        <label>Class</label>
-      <select name="class" ref={register}>
-        <option selected value=""></option>
-        <option value="testclass">Test Class</option>
-        </select>
+          <label>School</label>
+          <select name="school" ref={register}>
+            <option selected value="">none</option>
+            <option value="testschool">Test School</option>
+          </select>
 
-      <label>Profile Picture</label>
-      <input name="profilepic" type="file" ref={register} />
+          <label>Class</label>
+          <select name="class" ref={register}>
+            <option selected value=""></option>
+            <option value="testclass">Test Class</option>
+          </select>
 
-      <input type='submit'></input>
-      </fieldset>
-   </form>
-   </div>
+          <label>Profile Picture</label>
+          <input name="profilepic" type="file" ref={register} />
+
+          <input type='submit'></input>
+
+        </form>
+      </div>
+    </div>
 
   )
 
 }
-
 
 export default Signup;
