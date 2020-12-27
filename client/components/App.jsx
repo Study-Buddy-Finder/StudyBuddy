@@ -3,11 +3,9 @@ import Signup from "./Signup";
 import Login from "./Login";
 import { Switch, Route } from "react-router-dom";
 import styles from "../styles.css";
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import MainContainer from "./MainContainer";
 import Sidebar from "./Sidebar";
-import CreateEvent from "./createevent.jsx";
-import Userpage from "./userpage.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -31,7 +29,7 @@ class App extends Component {
 
   //     )
   // }
-
+  
   render() {
     return (
       <div className = 'app'>
@@ -42,34 +40,13 @@ class App extends Component {
           <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={Signup} />
 
-          <Route path="/homepage/">
+          <Route path="/homepage">
             <Navbar />
             <div className = "container">
                 <Sidebar />
                 <MainContainer />
             </div>
           </Route>
-
-          <Route path="/user/">
-            <Navbar />
-            <div className = "container">
-                <Sidebar />
-                <Userpage />
-                <p>we in user</p>
-            </div>
-          </Route>
-
-          <Route path="/create/">
-            <Navbar />
-            <div className = "container">
-                <Sidebar />
-                <CreateEvent />
-                <p>we in create</p>
-            </div>
-          </Route>
-
-
-
 
         </Switch>
       </div>
