@@ -1,20 +1,16 @@
 const express = require("express");
-const usersController = require("../controllers/usersController.js");
-const schoolsController = require("../controllers/schoolsController.js");
-const classesController = require("../controllers/classesController.js");
-const eventsController = require("../controllers/eventsController.js");
-const subsController = require("../controllers/subsController.js");
+const usersController = require("../controller/usersController.js");
+const schoolsController = require("../controller/schoolsController.js");
+const classesController = require("../controller/classesController.js");
+const eventsController = require("../controller/eventsController.js");
+const subsController = require("../controller/subsController.js");
 const router = express.Router();
 
 //-----------------------------------USERS-------------------------------
 //-------GET-----
-//get route for all users
-router.get("/users", usersController.getAllUsers, (req, res) => {
-  return res.status(200).json(res.locals.users);
-});
 
 //get route for auth, set body.user_name and body.user_password
-router.get("/users/auth", usersController.userAuth, (req, res) => {
+router.get("/users/auth/:user_name/:user_password", usersController.userAuth, (req, res) => {
     return res.status(200).json(res.locals.user)
 })
 
@@ -22,6 +18,12 @@ router.get("/users/auth", usersController.userAuth, (req, res) => {
 router.get("/users/:user_id", usersController.getUser, (req, res) => {
   return res.status(200).json(res.locals.user);
 });
+
+//get route for all users
+router.get("/users", usersController.getAllUsers, (req, res) => {
+  return res.status(200).json(res.locals.users);
+});
+
 
 
 //------POST-----

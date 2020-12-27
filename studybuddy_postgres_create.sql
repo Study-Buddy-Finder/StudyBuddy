@@ -1,3 +1,16 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.3 (Ubuntu 11.3-1.pgdg18.04+1)
+-- Dumped by pg_dump version 11.5
+
+-- Started on 2019-09-11 16:56:10 PDT
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -159,34 +172,3 @@ INSERT INTO public.eventsubs (user_id, event_id) VALUES (1, 2);
 INSERT INTO public.eventsubs (user_id, event_id) VALUES (2, 2);
 INSERT INTO public.eventsubs (user_id, event_id) VALUES (3, 3);
 INSERT INTO public.eventsubs (user_id, event_id) VALUES (4, 3);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

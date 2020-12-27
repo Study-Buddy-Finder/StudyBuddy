@@ -7,7 +7,6 @@ const PORT = 3000;
 // const apiRouter = require("./routes/route.js");
 const bodyParser = require("body-parser");
 
-
 //parse request body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
