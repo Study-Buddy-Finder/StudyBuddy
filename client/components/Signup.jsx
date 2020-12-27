@@ -11,13 +11,11 @@ function Signup() {
       // if successful:
       // changed loggedin state
       // redirect back to login
-      // <Redirect to="/homepage" />
   };
 
   const { register, handleSubmit } = useForm();
 
   return (
-
     <div className="signupPage">
       
       <div className="signupForm">
@@ -54,9 +52,7 @@ function Signup() {
         </form>
       </div>
     </div>
-
   )
-
 }
 
 export default Signup;

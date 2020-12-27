@@ -2,7 +2,7 @@
     "name": "study-buddy-4000",
     "version": "1.0.0",
     "description": "file-tree:",
-    "main": "webpack.config.js",
+    "main": "index.js",
     "scripts": {
         "start": "cross-env NODE_ENV=production node server/server.js",
         "build": "cross-env NODE_ENV=production webpack",
@@ -26,11 +26,11 @@
         "webpack": "^5.10.3",
         "webpack-cli": "^4.2.0",
         "webpack-dev-server": "^3.11.0",
-        "concurrently": "^5.3.0",
         "cross-env": "^7.0.3"
     },
     "dependencies": {
         "axios": "^0.21.1",
+        "concurrently": "^5.3.0",
         "express": "^4.12.3",
         "pg": "^8.5.1",
         "react": "^17.0.1",
