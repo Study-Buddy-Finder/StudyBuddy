@@ -1,21 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
-body {
-    background-image: url('/public/blueBG.jpg');
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-color: rgba(97, 144, 182, 0.2);
-    background-blend-mode: lighten;
-}
+
 
 .header {
     font-family: 'Limelight', cursive;
-    color: #457b9d;
-    background-color: #a8dadc;
+    color: #dee7ecfd;
+    background-color: #2e30334d;
     position: absolute;
     top: 0;
     left: 0;
