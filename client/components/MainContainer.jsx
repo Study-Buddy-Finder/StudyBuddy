@@ -15,7 +15,7 @@ export default function Homepage() {
         <Route path={`${match.path}/userpage`}>
           <UserProfile />
         </Route>
-        <Route path={`${match.path}/event`}>
+        <Route path={`${match.path}/eventlanding/event`}>
           <EventProfile />
         </Route>
         <Route path={`${match.path}/createevent`}>
