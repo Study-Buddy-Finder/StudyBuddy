@@ -33,7 +33,11 @@ function Sidebar() {
         <div className="sidebar_title">School</div>
         {schools.map((school) => {
           return (
-            <Link className="sidebar_link" to={`${match.path}/schoollanding`} key={Math.random()*1000}>
+            <Link
+              className="sidebar_link"
+              to={`${match.path}/schoollanding`}
+              key={Math.random() * 1000}
+            >
               <div
                 onClick={() => {
                   selectSchool(school.school_id);
@@ -55,7 +59,11 @@ function Sidebar() {
 
         {classes.map((data) => {
           return (
-            <Link className="sidebar_link" to={`${match.path}/eventlanding`} key={Math.random()*1000}>
+            <Link
+              className="sidebar_link"
+              to={`${match.path}/eventlanding`}
+              key={Math.random() * 1000}
+            >
               <div
                 onClick={() => {
                   setCurrentClass_id(data.class_id);
@@ -69,7 +77,11 @@ function Sidebar() {
           );
         })}
 
-        <button className="sidebar_button">Add new Class</button>
+        <Link className="sidebar_link"
+              to={`${match.path}/createclass`}
+              key={Math.random() * 1000}>
+          <button className="sidebar_button">Add new Class</button>
+        </Link>
       </div>
     </div>
   );
