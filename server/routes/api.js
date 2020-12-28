@@ -132,6 +132,11 @@ router.get("/events/:event_id", eventsController.getEvent, (req, res) => {
   return res.status(200).json(res.locals.events);
 });
 
+//get events based on class id
+router.get("/events/class/:class_id", eventsController.getEventsByClass, (req, res) => {
+  return res.status(200).json(res.locals.events)
+})
+
 //------POST-----
 //post route for create new Event, set body.event_name and body.event_location
 router.post("/events/", eventsController.createEvent, (req, res) => {
