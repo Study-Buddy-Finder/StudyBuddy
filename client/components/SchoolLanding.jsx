@@ -4,7 +4,7 @@ import { Link, useRouteMatch, useParams } from "react-router-dom";
 import { AppContext } from "./ContextProvider";
 
 function SchoolLanding() {
-  const { currentSchool_id } = useContext(AppContext);
+  const { currentSchool_id, user } = useContext(AppContext);
   const [ school, setSchool ] = useState({school_id: ''})
 
   useEffect(() => {
@@ -14,12 +14,25 @@ function SchoolLanding() {
   });
   }, [currentSchool_id]);
 
+  const subscribeToSchool = (school_id, user_id) => {
+    axios({
+      method: "POST",
+      url: "http://localhost:3000/api/schoolsub",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      body: { user_id: user_id, school_id: school_id },
+    }).then((res) => console.log(res));
+  }
+
+
   return (
     <div>
       <div>
         <p>Welcome to {school.school_name}</p>
         <p>Location: {school.school_location}</p>
-        <button>Subscribe to school!</button>
+        <button onClick = {()=>{subscribeToSchool(user.user_id, currentSchool_id)}}>Subscribe to school!</button>
       </div>
       <div>
         <p>School description: "placeholder"</p>
