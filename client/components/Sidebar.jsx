@@ -52,7 +52,13 @@ function Sidebar() {
           );
         })}
 
-        <button className="sidebar_button">Add new School</button>
+        <Link
+          className="sidebar_link"
+          to={`${match.path}/createschool`}
+          key={Math.random() * 1000}
+        >
+          <button className="sidebar_button">Add new School</button>
+        </Link>
       </div>
       <div className="sidebar_subcontainer">
         <div className="sidebar_title">Classes</div>
@@ -77,9 +83,11 @@ function Sidebar() {
           );
         })}
 
-        <Link className="sidebar_link"
-              to={`${match.path}/createclass`}
-              key={Math.random() * 1000}>
+        <Link
+          className="sidebar_link"
+          to={`${match.path}/createclass`}
+          key={Math.random() * 1000}
+        >
           <button className="sidebar_button">Add new Class</button>
         </Link>
       </div>
