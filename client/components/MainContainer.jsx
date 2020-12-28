@@ -11,10 +11,10 @@ export default function Homepage() {
     <div className="main_container">
       <p>main routing container</p>
       <Switch>
-        {/* <Route path={`${match.path}/userpage`}>
-          <UpdateUser />
-        </Route> */}
         <Route path={`${match.path}/userpage`}>
+          <UpdateUser />
+        </Route>
+        <Route path={`${match.path}/event`}>
           <EventProfile />
         </Route>
         <Route path={`${match.path}/createevent`}>
