@@ -191,8 +191,13 @@ router.delete("/classsub/", subsController.deleteClassSub, (req, res) => {
 });
 //-----EventSubs
 //get route for user event subscriptions based on user_id
-router.get("/eventsub/:user_id", subsController.getEventSubs, (req, res) => {
+router.get("/eventsub/user/:user_id", subsController.getEventSubs, (req, res) => {
   return res.status(200).json(res.locals.eventSubs);
+});
+
+//get route for user event subscriptions based on event_id
+router.get("/eventsub/event/:event_id", subsController.getEventIdSubs, (req, res) => {
+  return res.status(200).json(res.locals.eventIdSubs);
 });
 
 //post route for subscribe to event, set body.user_id and body.event_id
