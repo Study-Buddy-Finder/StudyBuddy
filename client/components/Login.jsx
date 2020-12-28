@@ -25,7 +25,7 @@ function Login(props) {
 
   return (
     <div className="loginPage">
-      <div>{user.user_name}</div>
+      
       <img
         className="loginBg"
         src="/studying.jpg"
