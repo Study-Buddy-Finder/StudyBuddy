@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
-function Signup() {
+function Signup(props) {
 
   const onSubmit = (values) => {
 
@@ -26,7 +26,6 @@ function Signup() {
         alert("Error creating account");
       }
     })
-    
   };
 
   const { register, handleSubmit } = useForm();
