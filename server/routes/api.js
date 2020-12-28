@@ -50,7 +50,7 @@ router.get("/schools", schoolsController.getAllSchools, (req, res) => {
 
 //get route for specific school
 router.get("/schools/:school_id", schoolsController.getSchool, (req, res) => {
-  return res.status(200).json(res.locals.school);
+  return res.status(200).json(res.locals.schools);
 });
 
 //------POST-----
