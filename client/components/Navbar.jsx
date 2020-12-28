@@ -13,6 +13,9 @@ export default function Navbar() {
         <Link to={`${match.path}/userpage`}>Profile</Link>
       </button>
       <button className="navbar_item">
+        <Link to={`${match.path}/event`}>Event</Link>
+      </button>
+      <button className="navbar_item">
         <Link to={`/`}>Logout</Link>
       </button>
     </nav>
