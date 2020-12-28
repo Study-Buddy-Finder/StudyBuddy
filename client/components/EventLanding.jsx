@@ -66,6 +66,9 @@ function EventLanding() {
                     <button>Create New Event</button>
                  </Link>
             </div>
+            <div className="imageContainer">
+                
+            </div>
            
         </div>
     )
