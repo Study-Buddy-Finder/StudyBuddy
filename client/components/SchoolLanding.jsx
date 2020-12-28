@@ -32,7 +32,7 @@ function SchoolLanding() {
       <div className = "schoollanding_schoolinfo">
         <p>Welcome to {school.school_name}</p>
         <p>Location: {school.school_location}</p>
-        <button onClick = {()=>{subscribeToSchool(user.user_id, currentSchool_id)}}>Subscribe to school!</button>
+        <button className="generic_button" onClick = {()=>{subscribeToSchool(user.user_id, currentSchool_id)}}>Subscribe to school!</button>
       </div>
       <div className = "schoollanding_schooldescription">
         <p>School description: "placeholder"</p>

@@ -63,7 +63,7 @@ function EventLanding() {
                     {eventList}
                 </div>
                 <Link className=""to={`${match.path}/createevent`} key={Math.random() * 1000}>
-                    <button>Create New Event</button>
+                    <button className="generic_button" >Create New Event</button>
                  </Link>
             </div>
            
