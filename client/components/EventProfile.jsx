@@ -1,30 +1,38 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AppContext } from "./ContextProvider";
+import axios from "axios";
 
 export default function EventProfile(props) {
   //use this event id in your get request
   const { currentEvent_id } = useContext(AppContext);
-  const [eventInfo, setEventInfo] = useState([]);
-
-  const [name, updateName] = useState("Vince");
-  const [school, updateSchool] = useState("Codesmith");
-  const [subject, updateClass] = useState([
-    "FrontEnd ",
-    "Events Profiles ",
-    "hello",
-  ]);
+  const [eventInfo, setEventInfo] = useState([""]);
+  const [classInfo, setClassInfo] = useState([""]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/events")
+      .get("http://localhost:3000/api/events/" + currentEvent_id)
       .then((res) => {
         setEventInfo(res.data);
-        // console.log(eventInfo);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [eventInfo.join(",")]);
+
+  useEffect(() => {
+    let classname = eventInfo[0]['class_id']; 
+
+    if (!classname) {classname = "";}
+
+    axios
+      .get("http://localhost:3000/api/classes/" + classname)
+      .then((res) => {
+        setClassInfo(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [classInfo.join(",")]);
 
   return (
     <div className="event-container">
@@ -35,7 +43,10 @@ export default function EventProfile(props) {
           height="140"
         ></img>
         <p>Current Event_id: {currentEvent_id}</p>
-        <p>Location: Pasadena, CA</p>
+        <p>Event: {eventInfo[0]["event_name"]}</p>
+        <p>Location: {eventInfo[0]["event_location"]}</p>
+        <p>Class: {classInfo[0]["class_name"]}</p>
+        {/* <p>Subject: {classInfo[0]["subject"]}</p> */}
         <p>Time: 8 pm</p>
         <p>Capacity: 35</p>
         <p>Host: Codesmith</p>
@@ -57,7 +68,7 @@ export default function EventProfile(props) {
         </div>
       </div>
       <div className="item3">
-        Friends attending: Ali, WIll, Heidi, Vince
+        <span>Friends attending: Ali, Will, Heidi, Vince</span>
         <img
           src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
           width="50"
