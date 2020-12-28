@@ -24,6 +24,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.generic_button{
+    border: none;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(163, 163, 163);
+}
 
 /* -----------Sidebar------------ */
 
@@ -68,9 +74,16 @@
 
 .sidebar_button {
     border: none;
+    font-weight: bold;
+    margin-top: 5px;
     border-radius: 5px;
     color: rgb(255, 255, 255);
     background-color: rgb(163, 163, 163);
+}
+
+.sidebar_button:hover{
+    cursor: pointer;
+    background-color: rgb(107, 107, 107);
 }
 
 .container {
@@ -112,6 +125,11 @@
     padding: 5px 10px;
 }
 
+.navbar_item:hover{
+    background-color: rgb(78, 78, 78);
+    cursor: pointer;
+}
+
 .navbar_link {
     text-decoration: none;
     color: rgb(230, 230, 230);
@@ -130,7 +148,7 @@
 /* ------Login Page----- */
 
 .loginPage {
-    min-height: 100vh;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,15 +161,16 @@
 }
 
 .loginForm {
+    margin-left: 20px;
     width: 350px;
     height: 350px;
     width: 20rem;
     padding: 3rem;
     box-sizing: border-box;
-    background: rgba(3, 4, 5, 0.685);
+    background: rgba(235, 235, 235, 0.685);
     /* background: #1d35575d; */
     font-size: 20px;
-    color: #f1faee;
+    color: #535353;
     border-radius: 0.625rem;
 }
 
@@ -250,6 +269,9 @@ li.navbar_item {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 7px;
 }
 
 .profilePic {
@@ -291,19 +313,21 @@ li.navbar_item {
     grid-template-areas: 'classContainer classContainer' 'eventContainer eventContainer';
     align-items: start;
     margin-top: 1rem;
-    background-color: #f1faee;
+    background-color: #e9e9e9;
     border-radius: 10px;
     justify-content: flex-start;
     font-size: 18px;
+    padding: 10px;
 }
 
 .eventContainer {
+    padding: 10px;
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
     margin-bottom: 2rem;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 5px 0;
+    padding: 10px;;
     border-radius: 10px;
     grid-area: eventContainer;
 }
@@ -318,7 +342,10 @@ li.navbar_item {
     padding: 5px 0;
     border-radius: 10px;
     grid-area: classContainer;
+    padding: 10px;
 }
+
+
 
 .classinfos {
     justify-content: center;
@@ -359,4 +386,11 @@ li.navbar_item {
 .signup_link {
     text-decoration: none;
     color: black;
+    
+}
+
+.schoollanding_container {
+    padding: 10px;
+    background-color: white;
+    border-radius: 7px;
 }

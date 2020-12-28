@@ -42,14 +42,14 @@ function Login(props) {
           <input name="user_password" type="password" ref={register} />
 
           <div className="submitBtn">
-            <input type="submit"></input>
+            <input className = "generic_button" type="submit"></input>
           </div>
         </form>
         Not registered?
         <br/>
         <Link className = "signup_link" to="/signup">Create an Account</Link>
         <br/>
-        <Link className = "signup_link" to="/homepage"> What it do </Link>
+        <Link className = "signup_link" to="/homepage"> Continue as Guest </Link>
       </div>
     </div>
   );
