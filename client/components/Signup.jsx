@@ -53,7 +53,6 @@ function Signup(props) {
           <label>Location</label>
           <input name="user_location" ref={register} />
 
-          
 
           {/* <label>Profile Picture</label>
           <input name="profilepic" type="file" ref={register} /> */}
