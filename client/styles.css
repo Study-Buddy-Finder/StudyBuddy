@@ -325,3 +325,9 @@ li.navbar_item {
     align-items: center;
     margin-top: 2rem;
 }
+
+
+.signup_link {
+  text-decoration: none;
+  color: black;
+}

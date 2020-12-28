@@ -46,8 +46,10 @@ function Login(props) {
           </div>
         </form>
         Not registered?
-        <Link to="/signup">Create an Account</Link>
-        <Link to="/homepage"> What it do </Link>
+        <br/>
+        <Link className = "signup_link" to="/signup">Create an Account</Link>
+        <br/>
+        <Link className = "signup_link" to="/homepage"> What it do </Link>
       </div>
     </div>
   );
