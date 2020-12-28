@@ -42,7 +42,6 @@ export default function EventProfile(props) {
       .get("http://localhost:3000/api/eventsub/event/" + currentEvent_id)
       .then((res) => {
         setUsersInfo(res.data);
-        console.log(usersInfo);
       })
       .catch((err) => {
         console.log(err);
@@ -83,21 +82,6 @@ export default function EventProfile(props) {
           return (<span key={Math.random()*100}>{user['first_name']} {user['last_name']} </span>);
         })}
         {/* <img
-          src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
-          width="50"
-          height="50"
-        ></img>
-        <img
-          src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
-          width="50"
-          height="50"
-        ></img>
-        <img
-          src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
-          width="50"
-          height="50"
-        ></img>
-        <img
           src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
           width="50"
           height="50"

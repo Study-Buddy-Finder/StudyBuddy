@@ -7,6 +7,7 @@ import EventLanding from "./EventLanding.jsx";
 import EventProfile from "./EventProfile.jsx";
 import SchoolLanding from "./SchoolLanding.jsx";
 import CreateClass from "./CreateClass"
+import CreateSchool from "./CreateSchool"
 
 export default function Homepage() {
   let match = useRouteMatch();
@@ -33,6 +34,9 @@ export default function Homepage() {
         </Route>
         <Route path={`${match.path}/createclass`}>
           <CreateClass />
+        </Route>
+        <Route path={`${match.path}/createschool`}>
+          <CreateSchool />
         </Route>
       </Switch>
     </div>

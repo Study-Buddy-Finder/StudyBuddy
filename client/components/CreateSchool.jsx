@@ -3,31 +3,30 @@ import { useForm } from "react-hook-form";
 import { AppContext } from "./ContextProvider";
 import axios from "axios";
 
-function CreateClass() {
+function CreateSchool() {
   const { currentSchool_id } = useContext(AppContext);
 
   const onSubmit = (values) => {
     const data = {
-      class_name: values.class_name,
-      subject: values.subject,
-      school_id: currentSchool_id,
+      school_name: values.school_name,
+      school_location: values.school_location,
     };
 
     axios
-      .post("http://localhost:3000/api/classes", data)
+      .post("http://localhost:3000/api/schools", data)
       .then((res) => console.log(res));
   };
 
   const { register, handleSubmit } = useForm();
 
   return (
-    <div className="classForm">
+    <div className="schoolForm">
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>Name</label>
-        <input name="class_name" placeholder="Class Name" ref={register} />
+        <input name="school_name" placeholder="School Name" ref={register} />
 
-        <label>Subject</label>
-        <input name="subject" placeholder="Subject" ref={register} />
+        <label>Location</label>
+        <input name="school_location" placeholder="School Location" ref={register} />
 
         <input type="submit"></input>
       </form>
@@ -35,4 +34,4 @@ function CreateClass() {
   );
 }
 
-export default CreateClass;
+export default CreateSchool;
