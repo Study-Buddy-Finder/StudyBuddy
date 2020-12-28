@@ -10,29 +10,26 @@ import Sidebar from "./Sidebar";
 class App extends Component {
   constructor(props) {
     super(props);
+    
     // this.state = {
-    //     loggedIn: false,
-    //     displaySignup: false,
-    // }
-    // this.displaySignup = this.displaySignup.bind(this);
+    //   user: {},
+    //   selectedSchool_id: "school",
+    //   selectedClass_id: "1",
+    // };
+
+    // this.selectSchool = (school_id) => {
+    //   this.setState((state) => ({
+    //     selectedSchool_id: school_id,
+    //   }));
+    // };
+
   }
 
-  // displaySignup(e) {
-  //     e.preventDefault()
-  //     console.log('hi')
-  //     this.setState({
-  //         displaySignup: true
-  //     })
-  // }
-  // componentDidMount() {
-  //     return (
-
-  //     )
-  // }
   
   render() {
     return (
       <div className = 'app'>
+        {/* <AppContext.Provider value={this.state}> */}
         <div className="header">
           <h1>Welcome to Study Buddy 4000</h1>
         </div>
@@ -49,6 +46,7 @@ class App extends Component {
           </Route>
 
         </Switch>
+        {/* //  </AppContext.Provider> */}
       </div>
     );
   }

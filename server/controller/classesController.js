@@ -38,6 +38,20 @@ classesController.getAllClasses = (req, res, next) => {
     .catch((err) => next(err));
 };
 
+
+classesController.getClassesBySchool = (req, res, next) => {
+  const params = [req.params.school_id];
+  const queryText = "SELECT * FROM public.classes WHERE school_id = $1;";
+
+  db.query(queryText, params)
+    .then((result) => {
+      res.locals.classes = result.rows;
+      return next();
+    })
+    .catch((err) => next(err));
+};
+
+
 //update
 classesController.updateClassName = (req, res, next) => {
   const params = [req.body.class_name, req.params.class_id];
