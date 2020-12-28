@@ -69,7 +69,6 @@ CREATE TABLE public.users (
     "user_password" varchar NOT NULL,
     "user_email" varchar NOT NULL,
     "user_location" varchar NOT NULL,
-    "user_bio" varchar NOT NULL,
     PRIMARY KEY ("user_id")
 ) WITH (
     OIDS=FALSE
@@ -119,9 +118,9 @@ ALTER TABLE public.events ADD CONSTRAINT fk_class FOREIGN KEY ("class_id") REFER
 
 --------- Add dummy data --------
 
-INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Ali', 'Rahman', 'arahman', 'password' 'arahman@gmail.com', 'California');
-INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Will', 'Bladon', 'wbladon', 'password' 'wbladon@gmail.com', 'California');
-INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Vince', 'Ho' 'vho', 'password', 'vho@gmail.com', 'California');
+INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Ali', 'Rahman', 'arahman', 'password', 'arahman@gmail.com', 'California');
+INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Will', 'Bladon', 'wbladon', 'password', 'wbladon@gmail.com', 'California');
+INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Vince', 'Ho', 'vho', 'password', 'vho@gmail.com', 'California');
 INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Heidi', 'Bang', 'hbang', 'password', 'hbang@gmail.com', 'California');
 
 
