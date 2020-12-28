@@ -13,6 +13,11 @@ class App extends Component {
     super(props);
 
 
+    this.setCurrentUser = (user) => {
+      this.setState(state => ({
+        user: user,
+      }));
+    };
     this.setCurrentSchool_id = (school_id) => {
       this.setState(state => ({
         currentSchool_id: school_id,
@@ -34,6 +39,7 @@ class App extends Component {
       currentSchool_id: "1",
       currentClass_id: "1",
       currentEvent_id: "1",
+      setCurrentUser: this.setCurrentUser,
       setCurrentSchool_id: this.setCurrentSchool_id,
       setCurrentClass_id: this.setCurrentClass_id,
       setCurrentEvent_id: this.setCurrentEvent_id,
