@@ -10,41 +10,62 @@
 
 
 /* -----------Sidebar------------ */
-
 .sidebar_container {
-    padding: 5px;
+    border-radius: 7px;
     display: flex;
     flex-direction: row;
     background-color: rgb(223, 223, 223);
     width: 200px;
-}
-
-.sidebar_schools_container {
+  }
+  
+  .sidebar_subcontainer {
+    width: 100px;
+    background-color: rgb(246, 246, 246)
+  }
+  
+  
+  .sidebar_title {
     padding: 5px;
-}
-
-.container {
+    width: 100px;
+    color: rgb(53, 53, 53);
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 2px solid lightgray;
+  }
+  
+  .sidebar_item {
+    padding: 5px;
+    color: rgb(116, 116, 116);
+  }
+  
+  .sidebar_item:hover {
+    cursor: pointer;
+    color: rgb(240, 240, 240);
+    background-color:rgb(71, 71, 71)
+  }
+  
+  .sidebar_button {
+    border: none;
+    border-radius: 5px;
+    color:rgb(255, 255, 255);
+    background-color:rgb(163, 163, 163);
+  }
+  
+  .container {
     display: flex;
     width: 1000px;
     height: 600px;
-}
-
-.display_text {
-    font-weight: bold;
-}
-
-
-/* ------Header------ */
-
-.header {
+  }
+  
+  /* ------Header------ */
+  .header {
     background-color: rgb(240, 240, 240);
     width: 100%;
-}
-
-
-/* ------Navbar------- */
-
-.navbar_container {
+    border-radius: 7px;
+  }
+  
+  /* ------Navbar------- */
+  .navbar_container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -52,15 +73,24 @@
     width: 100%;
     background-color: rgb(196, 196, 204);
     height: 45px;
-}
-
-.navbar_item {
+    border-radius: 7px;
+  }
+  
+  .navbar_item {
     font-weight: bold;
     color: black;
+    background-color:rgb(116, 116, 116);
+    border:none;
+    outline:none;
+    border-radius: 7px;
+    padding: 5px 10px;
+  }
+  
+  .navbar_link {
     text-decoration: none;
-    text-decoration-color: black;
-}
-
+    color: rgb(230, 230, 230);
+  }
+  
 
 /* -----Main Container----- */
 
