@@ -78,8 +78,8 @@ function Sidebar() {
 
             <button className="sidebar_button">Add new Class</button>
 
-            <p>currentSchool_id:{currentSchool_id}</p>
-            <p>currentClass_id:{currentClass_id}</p>
+            <p>{currentSchool_id}</p>
+            <p>{currentClass_id}</p>
           </div>
         </div>
       )}
