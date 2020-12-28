@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
+import axios from "axios";
+import { AppContext } from "./ContextProvider";
 
 
 // export default function Userpage (props){
@@ -21,6 +23,7 @@ import React, {useState} from 'react';
 // }
 
 function Userpage() {
+  const { user } = useContext(AppContext)
 
   //grab fname, lname
   const [name,updateName] = useState('John Smith');
@@ -32,9 +35,10 @@ function Userpage() {
     <div className="userProfile">
       <img className="profilePic" src="/john-smith.jpg"></img>
       <pre>
-      <div className="displayName">{name}</div>
-      <div className="location">Location       {location}</div>
-      <div className="contact">Contact         {contact}</div>
+      <div className="displayName">{user.user_name}</div>
+      <div className="name">Name        {user.first_name, user.last_name} </div>
+      <div className="location">Location       {user.user_location}</div>
+      <div className="contact">Contact         {user.user_email}</div>
       <div className="bio">About Me      I enjoy hiking, reading, and watching TV.</div>
       </pre>
 
