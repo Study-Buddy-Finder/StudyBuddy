@@ -47,7 +47,7 @@ function EventLanding() {
     for (let i = 0; i < classinfo.length; i+= 1) {
         classInfo.push(<Classinfo className ="classinfo" key= {classinfo[i]["class_id"]} subject={classinfo[i]["subject"]} name = {classinfo[i]["class_name"]} ></Classinfo>)
     }
-    // <Classinfo className ="classinfo" key= {classinfo["class_id"]} subject={classinfo["subject"]} name = {classinfo["class_name"]} ></Classinfo>
+    
     return (
         <div className = "eventLandingContainer">
             <div className ="classContainer">
@@ -63,7 +63,7 @@ function EventLanding() {
                     {eventList}
                 </div>
                 <Link className=""to={`${match.path}/createevent`} key={Math.random() * 1000}>
-                    <button>Create New Event</button>
+                    <button className="mainContainerBtn">Create New Event</button>
                  </Link>
             </div>
             <div className="imageContainer">

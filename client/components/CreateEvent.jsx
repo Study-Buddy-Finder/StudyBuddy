@@ -7,6 +7,7 @@ export default function CreateEvent(props){
   const [date, updateDate] = useState('no date set yet')
 
   return(
+  
     <div> 
         Current: {location}
         What Subject?

@@ -302,7 +302,7 @@ li.navbar_item {
     margin-top: 1rem;
     margin-bottom: 2rem;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 5px 0;
+    padding: 5px 12px;
     border-radius: 10px;
     grid-area: eventContainer;
 }
@@ -314,7 +314,7 @@ li.navbar_item {
 .classContainer {
     margin-top: 1rem;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 5px 0;
+    padding: 5px 12px;
     border-radius: 10px;
     grid-area: classContainer;
 }
@@ -330,6 +330,14 @@ li.navbar_item {
 
 .eventItem {
     margin-top: .3rem;
+}
+
+.mainContainerBtn {
+    padding: 15px 32px;
+    border: 1px solid grey;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin-top: 8px;
 }
 
 
