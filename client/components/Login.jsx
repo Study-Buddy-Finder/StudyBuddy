@@ -1,18 +1,12 @@
-import React, { Component, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 
-function Login() {
+function Login(props) {
   const onSubmit = (values) => {
-    // get req to check if email and PW exists for same user
-    // if successful change status to logged in
-    // axios.get('http://localhost:3000/api/users/auth', values,
-    // {headers: { "Content-Type": "Application/JSON" }})
-    //   .then(res => console.log(res))
-    // <Redirect to="/homepage" />
-    console.log(values)
+
     fetch(
       `http://localhost:3000/api/users/auth/${values.user_name}/${values.user_password}`,
       {
@@ -23,7 +17,13 @@ function Login() {
       }
     )
       .then((res) => res.json())
-      .then((userData) => console.log(userData));
+      .then((userData) => {
+        if (userData.length > 0) {
+          props.history.push('/homepage')
+        } else {
+          alert('Wrong username or password entered')
+        }
+      });
   };
 
   //headers: { "Content-Type": "Application/JSON" }

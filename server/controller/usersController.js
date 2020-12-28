@@ -5,9 +5,9 @@ const usersController = {};
 
 //create
 usersController.createUser = (req, res, next) => {
-  const params = [req.body.user_name, req.body.user_password, req.body.join_date];
+  const params = [req.body.first_name, req.body.last_name, req.body.user_name, req.body.user_password, req.body.user_email, req.body.user_location];
   const queryText =
-    "INSERT INTO public.users (user_name, user_password, user_join_date) VALUES ($1, $2, $3);";
+    "INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ($1, $2, $3, $4, $5, $6);";
 
   db.query(queryText, params)
     .then((res) => next())

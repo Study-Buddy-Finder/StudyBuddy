@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/CourageWolf/study-buddy-4000.git"
+        "url": "git+https://github.com/scratch-project-40/study-buddy-4000.git"
     },
     "keywords": [],
     "author": "",
@@ -20,13 +20,15 @@
         "@babel/preset-env": "^7.12.10",
         "@babel/preset-react": "^7.12.10",
         "babel-loader": "^8.2.2",
+        "cross-env": "^7.0.3",
         "css-loader": "^5.0.1",
         "nodemon": "^2.0.6",
         "style-loader": "^2.0.0",
         "webpack": "^5.10.3",
         "webpack-cli": "^4.2.0",
         "webpack-dev-server": "^3.11.0",
-        "cross-env": "^7.0.3"
+        "file-loader": "^6.2.0",
+        "url-loader": "^4.1.1"
     },
     "dependencies": {
         "axios": "^0.21.1",

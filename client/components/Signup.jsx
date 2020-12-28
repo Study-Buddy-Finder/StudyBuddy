@@ -6,11 +6,16 @@ function Signup() {
 
   const onSubmit = (values) => {
     console.log(values)
-    axios.post('http://localhost:3000/api/test', values)
-      .then(res => console.log(res))
-      // if successful:
-      // changed loggedin state
-      // redirect back to login
+    axios({
+      method: 'POST',
+      url: 'http://localhost:3000/api/users',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      },
+      body: { values }
+    })
+    .then(res => console.log(res))
   };
 
   const { register, handleSubmit } = useForm();
@@ -23,29 +28,25 @@ function Signup() {
         <form onSubmit={handleSubmit(onSubmit)}>
 
           <label>Name</label>
-          <input name="fname" placeholder="First" ref={register} />
-          <input name="lname" placeholder="Last" ref={register} />
+          <input name="first_name" placeholder="First" ref={register} />
+          <input name="last_name" placeholder="Last" ref={register} />
 
-          <label>Email</label>
-          <input name="email" type="email" ref={register} />
+          <label>Username</label>
+          <input name="user_name"  ref={register} />
 
           <label>Password</label>
-          <input name="password" type="password" ref={register} />
+          <input name="user_password" type="password" ref={register} />
 
-          <label>School</label>
-          <select name="school" ref={register}>
-            <option selected value="">none</option>
-            <option value="testschool">Test School</option>
-          </select>
+          <label>Email</label>
+          <input name="user_email" type="email" ref={register} />
 
-          <label>Class</label>
-          <select name="class" ref={register}>
-            <option selected value=""></option>
-            <option value="testclass">Test Class</option>
-          </select>
+          <label>Location</label>
+          <input name="user_location" ref={register} />
 
-          <label>Profile Picture</label>
-          <input name="profilepic" type="file" ref={register} />
+          
+
+          {/* <label>Profile Picture</label>
+          <input name="profilepic" type="file" ref={register} /> */}
 
           <input type='submit'></input>
 

@@ -63,9 +63,13 @@ CREATE TABLE public.schools (
 
 CREATE TABLE public.users (
     "user_id" serial NOT NULL,
+    "first_name" varchar NOT NULL,
+    "last_name" varchar NOT NULL,
     "user_name" varchar NOT NULL,
     "user_password" varchar NOT NULL,
-    "user_join_date" varchar NOT NULL,
+    "user_email" varchar NOT NULL,
+    "user_location" varchar NOT NULL,
+    "user_bio" varchar NOT NULL,
     PRIMARY KEY ("user_id")
 ) WITH (
     OIDS=FALSE
@@ -115,10 +119,10 @@ ALTER TABLE public.events ADD CONSTRAINT fk_class FOREIGN KEY ("class_id") REFER
 
 --------- Add dummy data --------
 
-INSERT INTO public.users (user_name, user_password, user_join_date) VALUES ('Ali', 'something', '12/21/2020');
-INSERT INTO public.users (user_name, user_password, user_join_date) VALUES ('Will', 'something', '12/21/2020');
-INSERT INTO public.users (user_name, user_password, user_join_date) VALUES ('Vince', 'something', '12/21/2020');
-INSERT INTO public.users (user_name, user_password, user_join_date) VALUES ('Heidi', 'something', '12/21/2020');
+INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Ali', 'Rahman', 'arahman', 'password' 'arahman@gmail.com', 'California');
+INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Will', 'Bladon', 'wbladon', 'password' 'wbladon@gmail.com', 'California');
+INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Vince', 'Ho' 'vho', 'password', 'vho@gmail.com', 'California');
+INSERT INTO public.users (first_name, last_name, user_name, user_password, user_email, user_location) VALUES ('Heidi', 'Bang', 'hbang', 'password', 'hbang@gmail.com', 'California');
 
 
 INSERT INTO public.schools ("school_name", "school_location") VALUES ('Codesmith', 'Venice');
