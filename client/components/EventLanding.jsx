@@ -13,7 +13,6 @@ function EventLanding() {
     useEffect(()=> {
         axios.get('http://localhost:3000/api/events')
             .then(res => {
-                console.log(res.data);
                 setEventInfo(res.data);
                 // console.log(eventInfo);
             })
@@ -25,7 +24,6 @@ function EventLanding() {
      useEffect(()=> {
         axios.get('http://localhost:3000/api/classes')
             .then(res => {
-                console.log(res.data);
                 setClassInfo(res.data);
             })
             .catch (err => {

@@ -54,7 +54,14 @@
   
   .sidebar_item {
     padding: 5px;
+    color: rgb(71, 71, 71);
+    
+    text-decoration: none;
+  }
+
+  .sidebar_link {
     color: rgb(116, 116, 116);
+    text-decoration: none;
   }
   
   .sidebar_item:hover {

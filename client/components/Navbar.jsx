@@ -6,17 +6,17 @@ export default function Navbar() {
   return (
     <nav className="navbar_container">
       <button className="navbar_item">
-        <Link to={`${match.path}/`}>Home</Link>
+        <Link className="navbar_link" to={`${match.path}/`}>Home</Link>
       </button>
       <input placeholder="Search.."></input>
       <button className="navbar_item">
-        <Link to={`${match.path}/userpage`}>Profile</Link>
+        <Link className="navbar_link" to={`${match.path}/userpage`}>Profile</Link>
       </button>
       <button className="navbar_item">
-        <Link to={`${match.path}/event`}>Event</Link>
+        <Link className="navbar_link" to={`${match.path}/event`}>Event</Link>
       </button>
       <button className="navbar_item">
-        <Link to={`/`}>Logout</Link>
+        <Link className="navbar_link" to={`/`}>Logout</Link>
       </button>
     </nav>
   );
