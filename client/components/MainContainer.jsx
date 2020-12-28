@@ -3,12 +3,13 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
 import UserProfile from "./UserProfile.jsx";
 import UpdateUser from "./UpdateUser.jsx";
 import CreateEvent from "./CreateEvent.jsx";
-
+import EventLanding from "./EventLanding.jsx";
 export default function Homepage() {
   let match = useRouteMatch();
   return (
     <div className="main_container">
       <p>main routing container</p>
+      <EventLanding></EventLanding>
       <Switch>
         <Route path={`${match.path}/userpage`}>
           <UpdateUser />
@@ -16,9 +17,9 @@ export default function Homepage() {
         <Route path={`${match.path}/createevent`}>
           <CreateEvent />
         </Route>
-        <Route path={match.path}>
+        {/* <Route path={match.path}>
           <UserProfile />
-        </Route>
+        </Route> */}
       </Switch>
     </div>
   );
