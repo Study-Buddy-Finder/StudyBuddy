@@ -5,17 +5,28 @@ import axios from 'axios';
 function Signup() {
 
   const onSubmit = (values) => {
-    console.log(values)
-    axios({
-      method: 'POST',
-      url: 'http://localhost:3000/api/users',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-      },
-      body: { values }
+
+    const data = {
+      first_name: values.first_name,
+      last_name: values.last_name,
+      user_name: values.user_name,
+      user_password: values.user_password,
+      user_email: values.user_email,
+      user_location: values.user_location
+    }
+    console.log(data)
+
+    axios.post('http://localhost:3000/api/users', data)
+    .then(res => {
+      console.log(res)
+      if (res.status === 200) {
+        alert("Account successfully created. Return to Login")
+        props.history.push('/')
+      } else {
+        alert("Error creating account");
+      }
     })
-    .then(res => console.log(res))
+    
   };
 
   const { register, handleSubmit } = useForm();
@@ -43,7 +54,6 @@ function Signup() {
           <label>Location</label>
           <input name="user_location" ref={register} />
 
-          
 
           {/* <label>Profile Picture</label>
           <input name="profilepic" type="file" ref={register} /> */}
