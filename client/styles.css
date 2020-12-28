@@ -261,6 +261,7 @@ li.navbar_item {
     text-align: center;
     padding: 5px 0;
     /* font-size: 30px; */
+    border-radius: 3%;
 }
 
 .userProfile {
