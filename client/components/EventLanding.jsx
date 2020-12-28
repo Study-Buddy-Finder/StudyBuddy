@@ -1,10 +1,17 @@
 import React, {useState, useEffect, useContext} from 'react';
 import axios from 'axios';
 import EventList from "./EventList.jsx";
+import { AppContext } from "./ContextProvider";
 //use axios to get the list
 //use hooks and use effect to set state 
-let temp;
+
 function EventLanding() {
+
+    //make a get request with this id for correct event list
+    const { currentClass_id } = useContext(AppContext);
+
+
+
     const [eventInfo, setEventInfo] = useState([]);
     const [classinfo, setClassInfo] = useState([]);
     
@@ -13,7 +20,6 @@ function EventLanding() {
     useEffect(()=> {
         axios.get('http://localhost:3000/api/events')
             .then(res => {
-                console.log(res.data);
                 setEventInfo(res.data);
                 // console.log(eventInfo);
             })
@@ -25,7 +31,6 @@ function EventLanding() {
      useEffect(()=> {
         axios.get('http://localhost:3000/api/classes')
             .then(res => {
-                console.log(res.data);
                 setClassInfo(res.data);
             })
             .catch (err => {
@@ -39,6 +44,7 @@ function EventLanding() {
    
     return (
         <div>
+            Current Class id : {currentClass_id}
             Event Landing
             <div>
                 Class Info: 

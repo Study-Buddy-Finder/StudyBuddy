@@ -1,7 +1,10 @@
 import React from "react";
 export const AppContext = React.createContext({
   user: {},
-  selectedSchool_id: "",
-  selectedClass_id: "1",
-  setSchool: () => {},
+  currentSchool_id: "1",
+  currentClass_id: "1",
+  currentEvent_id: "1",
+  setCurrentClass_id: () => {},
+  setCurrentSchool_id: () => {},
+  setCurrentEvent_id: () => {},
 });

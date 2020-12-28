@@ -125,9 +125,9 @@ INSERT INTO public.users (first_name, last_name, user_name, user_password, user_
 
 
 INSERT INTO public.schools ("school_name", "school_location") VALUES ('Codesmith', 'Venice');
-INSERT INTO public.schools ("school_name", "school_location") VALUES ('Pasasdena City College', 'Pasadena');
-INSERT INTO public.schools ("school_name", "school_location") VALUES ('University of Alabama', 'Tuscaloosa');
-INSERT INTO public.schools ("school_name", "school_location") VALUES ('University of Michigan', 'Ann Arbor');
+INSERT INTO public.schools ("school_name", "school_location") VALUES ('PCC', 'Pasadena');
+INSERT INTO public.schools ("school_name", "school_location") VALUES ('Bama', 'Tuscaloosa');
+INSERT INTO public.schools ("school_name", "school_location") VALUES ('UMich', 'Ann Arbor');
 INSERT INTO public.schools ("school_name", "school_location") VALUES ('Harvard', 'Cambridge');
 
 
