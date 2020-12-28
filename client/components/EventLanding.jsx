@@ -9,7 +9,7 @@ import Classinfo from "./Classinfo";
 function EventLanding() {
 
     //make a get request with this id for correct event list
-    const { currentClass_id } = useContext(AppContext);
+    const { currentClass_id, setCurrentEvent_id, currentEvent_id } = useContext(AppContext);
 
 
 
@@ -22,7 +22,7 @@ function EventLanding() {
         axios.get(`http://localhost:3000/api/events/class/${currentClass_id}`)
             .then(res => {
                 setEventInfo(res.data);
-                console.log(eventInfo);
+                
             })
             .catch (err => {
                 console.log(err);
@@ -33,8 +33,7 @@ function EventLanding() {
         axios.get(`http://localhost:3000/api/classes/${currentClass_id}`)
             .then(res => {
                 setClassInfo(res.data);
-                // console.log(res.data);
-                console.log(classinfo);
+                
             })
             .catch (err => {
                 console.log(err);
@@ -42,7 +41,7 @@ function EventLanding() {
     },[currentClass_id]);
     const eventList = [];
     for (let i = 0; i < eventInfo.length; i+= 1) {
-        eventList.push(<EventList className ="eventList" key= {eventInfo[i]["event_id"]} name={eventInfo[i]["event_name"]} location={eventInfo[i]["event_location"]} ></EventList>)
+        eventList.push(<EventList setCurrentEvent_id = {setCurrentEvent_id} className ="eventList" key= {eventInfo[i]["event_id"]} event_id = {eventInfo[i]["event_id"]} name={eventInfo[i]["event_name"]} location={eventInfo[i]["event_location"]} ></EventList>)
     }
     const classInfo = [];
     for (let i = 0; i < classinfo.length; i+= 1) {
