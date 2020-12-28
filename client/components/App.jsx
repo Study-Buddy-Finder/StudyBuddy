@@ -15,6 +15,7 @@ function App (){
   
     return (
       <div className = 'app'>
+        {/* <AppContext.Provider value={this.state}> */}
         <div className="header">
           <h1>Study Buddy Finder</h1>
         </div>
@@ -31,6 +32,7 @@ function App (){
           </Route>
 
         </Switch>
+        {/* //  </AppContext.Provider> */}
       </div>
     );
 
