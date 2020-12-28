@@ -14,9 +14,9 @@ function EventList(props) {
         className="event"
       >
         Event: {props.name}
-        <div> Location : {props.location} </div>
-        <div> Time: Clippers down 50 by halftime </div>
-        <div> Capacity : Clippers are opening night champs </div>
+        <div className="eventItem"> Location : {props.location} </div>
+        <div className="eventItem"> Time: Clippers down 50 by halftime </div>
+        <div className="eventItem"> Capacity : Clippers are opening night champs </div>
       </div>
     </Link>
   );

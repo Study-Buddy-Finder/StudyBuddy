@@ -26,11 +26,11 @@ export default function Homepage() {
         <Route path={`${match.path}/schoollanding`}>
           <SchoolLanding />
         </Route>
+        <Route path={`${match.path}/eventlanding/createevent`}>
+          <CreateEvent />
+        </Route>
         <Route path={`${match.path}/eventlanding`}>
           <EventLanding />
-        </Route>
-        <Route path={`${match.path}/createevent`}>
-          <CreateEvent />
         </Route>
         <Route path={`${match.path}/createclass`}>
           <CreateClass />

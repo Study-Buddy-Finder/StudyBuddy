@@ -3,12 +3,12 @@ import axios from 'axios';
 import EventList from "./EventList.jsx";
 import { AppContext } from "./ContextProvider";
 import Classinfo from "./Classinfo";
+import { Link, useRouteMatch, useParams } from "react-router-dom";
 //use axios to get the list
 //use hooks and use effect to set state 
 
 function EventLanding() {
-
-    //make a get request with this id for correct event list
+    let match = useRouteMatch();
     const { currentClass_id, setCurrentEvent_id, currentEvent_id } = useContext(AppContext);
 
 
@@ -52,7 +52,7 @@ function EventLanding() {
         <div className = "eventLandingContainer">
             <div className ="classContainer">
                 Current Class id : {currentClass_id}
-                <div>
+                <div className="classinfos">
                     {classInfo}
                 </div>
 
@@ -62,8 +62,11 @@ function EventLanding() {
                 <div className="events">
                     {eventList}
                 </div>
+                <Link className=""to={`${match.path}/createevent`} key={Math.random() * 1000}>
+                    <button>Create New Event</button>
+                 </Link>
             </div>
-            
+           
         </div>
     )
 }

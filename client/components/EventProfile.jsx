@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default function EventProfile(props) {
   //use this event id in your get request
-  const { currentEvent_id } = useContext(AppContext);
+  const { currentEvent_id, user } = useContext(AppContext);
   const [eventInfo, setEventInfo] = useState([""]);
   const [classInfo, setClassInfo] = useState([""]);
   const [usersInfo, setUsersInfo] = useState([""]);
@@ -48,6 +48,18 @@ export default function EventProfile(props) {
       });
   }, [usersInfo.join(",")]);
 
+  const subscribeToEvent = (user_id, event_id) => {
+    axios({
+      method: "POST",
+      url: "http://localhost:3000/api/eventsub",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      body: { user_id: user_id, event_id: event_id },
+    }).then((res) => console.log(res));
+  }
+
   return (
     <div className="event-container">
       <div className="item1">
@@ -64,6 +76,7 @@ export default function EventProfile(props) {
         <p>Time: 8 pm</p>
         <p>Capacity: 35</p>
         <p>Host: Codesmith</p>
+        <button onClick = {()=>{subscribeToEvent(user.user_id, currentEvent_id)}}>Subscribe to event</button>
       </div>
       <div className="item2">
         <div>
@@ -79,7 +92,11 @@ export default function EventProfile(props) {
       <div className="item3">
         <span>Friends attending: </span>
         {usersInfo.map((user) => {
-          return (<span key={Math.random()*100}>{user['first_name']} {user['last_name']} </span>);
+          return (
+            <span key={Math.random() * 100}>
+              {user["first_name"]} {user["last_name"]}{" "}
+            </span>
+          );
         })}
         {/* <img
           src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
