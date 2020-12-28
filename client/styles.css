@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
 
 
@@ -36,13 +35,11 @@
 }
 
 .welcome {
-    font-family: 'Lilita One', cursive;
     font-size: 40px;
     position: fixed;
     left: 20px;
     top: 100px;
-    color: #a8dadc;
-    text-shadow: 2px 2px #457b9d;
+    color: #2b54ac;
 }
 
 
@@ -194,4 +191,45 @@ li.navbar_item {
   margin: 20px;
   color: #e63946;
   text-decoration: none;
+}
+
+.userProfile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.profilePic {
+    border-radius: 0.625rem;
+    height: 200px;
+    width: 200px;
+}
+
+.displayName {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: xx-large; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.location {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bio {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
 }
