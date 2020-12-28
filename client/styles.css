@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
-
-
-
 .header {
     font-family: 'Limelight', cursive;
     color: #dee7ecfd;
@@ -29,69 +26,72 @@
 
 
 /* -----------Sidebar------------ */
+
 .sidebar_container {
     border-radius: 7px;
     display: flex;
     flex-direction: row;
     background-color: rgb(223, 223, 223);
     width: 200px;
-  }
-  
-  .sidebar_subcontainer {
+}
+
+.sidebar_subcontainer {
     width: 100px;
     background-color: rgb(246, 246, 246)
-  }
-  
-  
-  .sidebar_title {
+}
+
+.sidebar_title {
     padding: 5px;
     width: 100px;
     color: rgb(53, 53, 53);
     font-weight: bold;
     font-size: 1.1rem;
     border-bottom: 2px solid lightgray;
-  }
-  
-  .sidebar_item {
+}
+
+.sidebar_item {
     padding: 5px;
     color: rgb(71, 71, 71);
-    
     text-decoration: none;
-  }
+}
 
-  .sidebar_link {
+.sidebar_link {
     color: rgb(116, 116, 116);
     text-decoration: none;
-  }
-  
-  .sidebar_item:hover {
+}
+
+.sidebar_item:hover {
     cursor: pointer;
     color: rgb(240, 240, 240);
-    background-color:rgb(71, 71, 71)
-  }
-  
-  .sidebar_button {
+    background-color: rgb(71, 71, 71)
+}
+
+.sidebar_button {
     border: none;
     border-radius: 5px;
-    color:rgb(255, 255, 255);
-    background-color:rgb(163, 163, 163);
-  }
-  
-  .container {
+    color: rgb(255, 255, 255);
+    background-color: rgb(163, 163, 163);
+}
+
+.container {
     display: flex;
     width: 1000px;
     height: 600px;
-  }
-  
-  /* ------Header------ */
-  .header {
+}
+
+
+/* ------Header------ */
+
+.header {
     background-color: rgb(240, 240, 240);
     width: 100%;
     border-radius: 7px;
-  }
-  
-  /* ------Navbar------- */
-  .navbar_container {
+}
+
+
+/* ------Navbar------- */
+
+.navbar_container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -100,23 +100,23 @@
     background-color: rgb(196, 196, 204);
     height: 45px;
     border-radius: 7px;
-  }
-  
-  .navbar_item {
+}
+
+.navbar_item {
     font-weight: bold;
     color: black;
-    background-color:rgb(116, 116, 116);
-    border:none;
-    outline:none;
+    background-color: rgb(116, 116, 116);
+    border: none;
+    outline: none;
     border-radius: 7px;
     padding: 5px 10px;
-  }
-  
-  .navbar_link {
+}
+
+.navbar_link {
     text-decoration: none;
     color: rgb(230, 230, 230);
-  }
-  
+}
+
 
 /* -----Main Container----- */
 
@@ -210,37 +210,45 @@ li.navbar_item {
     text-decoration: none;
 }
 
+
 /* ------Event Profile Page----- */
-.item1 { grid-area: picture; }
-.item2 { grid-area: bio; }
-.item3 { grid-area: friends; }
-.item4 { grid-area: map; }
 
-
-.event-container {
-  display: grid;
-  grid-template-areas:
-    'picture picture bio bio bio'
-    'picture picture bio bio bio'
-    'friends friends friends friends friends'
-    'map map map map map';
-  grid-gap: 5px;
-  /* background-color: #2196F3; */
-  padding: 5px;
+.item1 {
+    grid-area: picture;
 }
 
-.event-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 5px 0;
-  /* font-size: 30px; */
+.item2 {
+    grid-area: bio;
+}
+
+.item3 {
+    grid-area: friends;
+}
+
+.item4 {
+    grid-area: map;
+}
+
+.event-container {
+    display: grid;
+    grid-template-areas: 'picture picture bio bio bio' 'picture picture bio bio bio' 'friends friends friends friends friends' 'map map map map map';
+    grid-gap: 5px;
+    /* background-color: #2196F3; */
+    padding: 5px;
+}
+
+.event-container>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 5px 0;
+    /* font-size: 30px; */
 }
 
 .userProfile {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;   
+    align-items: center;
 }
 
 .profilePic {
@@ -252,7 +260,7 @@ li.navbar_item {
 .displayName {
     padding-top: 10px;
     font-weight: bold;
-    font-size: xx-large; 
+    font-size: xx-large;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -277,12 +285,43 @@ li.navbar_item {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.eventLandingContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.eventContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
 .eventList {
     display: flex;
 }
 
+.events {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .event {
     display: flex;
-    flex-direction: row;
-    font-size: 14px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.classContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
 }
