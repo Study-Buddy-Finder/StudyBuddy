@@ -1,38 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AppContext } from "./ContextProvider";
 import axios from "axios";
 
-
 function Login(props) {
-  const onSubmit = (values) => {
-
-    fetch(
-      `http://localhost:3000/api/users/auth/${values.user_name}/${values.user_password}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "Application/JSON",
-        }
-      }
-    )
-      .then((res) => res.json())
-      .then((userData) => {
-        if (userData.length > 0) {
-          props.history.push('/homepage')
-        } else {
-          alert('Wrong username or password entered')
-        }
-      });
-  };
-
-  //headers: { "Content-Type": "Application/JSON" }
-
+  const { user, setCurrentUser } = useContext(AppContext);
   const { register, handleSubmit } = useForm();
 
-  return (
+  const onSubmit = (values) => {
+    console.log(values)
+    axios(
+      `http://localhost:3000/api/users/auth/${values.user_name}/${values.user_password}`
+    ).then((res) => {
+      
+      if (res.data.length > 0) {
+        setCurrentUser(res.data[0]);
+        props.history.push('/homepage')
+      } else {
+        alert("Wrong username or password entered");
+      }
+    });
+  };
 
+  return (
     <div className="loginPage">
+      <div>{user.user_name}</div>
       <img
         className="loginBg"
         src="/studying.jpg"

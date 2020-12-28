@@ -5,20 +5,27 @@ import UpdateUser from "./UpdateUser.jsx";
 import CreateEvent from "./CreateEvent.jsx";
 import EventLanding from "./EventLanding.jsx";
 import EventProfile from "./EventProfile.jsx";
-
+import SchoolLanding from "./SchoolLanding.jsx";
 
 export default function Homepage() {
   let match = useRouteMatch();
   return (
     <div className="main_container">
-      <p>main routing container</p>
-      <EventLanding />
       <Switch>
         <Route path={`${match.path}/userpage`}>
-          <UpdateUser />
+          <UserProfile />
         </Route>
         <Route path={`${match.path}/event`}>
           <EventProfile />
+        </Route>
+        <Route path={`${match.path}/createevent`}>
+          <CreateEvent />
+        </Route>
+        <Route path={`${match.path}/schoollanding`}>
+          <SchoolLanding />
+        </Route>
+        <Route path={`${match.path}/eventlanding`}>
+          <EventLanding />
         </Route>
         <Route path={`${match.path}/createevent`}>
           <CreateEvent />
