@@ -23,13 +23,21 @@ class App extends Component {
         currentClass_id: class_id,
       }));
     };
+    this.setCurrentEvent_id = (event_id) => {
+      this.setState(state => ({
+        currentEvent_id: event_id,
+      }));
+    };
 
     this.state = {
       user: {},
       currentSchool_id: "1",
       currentClass_id: "1",
+      currentEvent_id: "1",
+      setCurrentSchool_id: this.setCurrentSchool_id,
       setCurrentClass_id: this.setCurrentClass_id,
-      setCurrentSchool_id: this.setCurrentSchool_id
+      setCurrentEvent_id: this.setCurrentEvent_id,
+      
     };
   }
 

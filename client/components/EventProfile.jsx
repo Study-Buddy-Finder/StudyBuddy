@@ -1,7 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import { AppContext } from "./ContextProvider";
 
 
 export default function EventProfile (props){
+
+  //use this event id in your get request
+  const { currentEvent_id } = useContext(AppContext);
+
   const [name,updateName] = useState('Vince');
   const [school, updateSchool] = useState('Codesmith');
   const [subject, updateClass] = useState(['FrontEnd ','Events Profiles ', 'hello']);
@@ -13,6 +18,7 @@ export default function EventProfile (props){
         {/* <p>Current: {name}</p>
         <p>Current School: {school}</p>
         <p>Current Class: {subject}</p> */}
+        <p>Current Event_id: {currentEvent_id}</p>
         <p>Location: Pasadena, CA</p>
         <p>Time: 8 pm</p>
         <p>Capacity: 35</p>
