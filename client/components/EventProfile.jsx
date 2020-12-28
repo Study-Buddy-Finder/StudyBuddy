@@ -7,6 +7,7 @@ export default function EventProfile(props) {
   const { currentEvent_id } = useContext(AppContext);
   const [eventInfo, setEventInfo] = useState([""]);
   const [classInfo, setClassInfo] = useState([""]);
+  const [usersInfo, setUsersInfo] = useState([""]);
 
   useEffect(() => {
     axios
@@ -20,9 +21,11 @@ export default function EventProfile(props) {
   }, [eventInfo.join(",")]);
 
   useEffect(() => {
-    let classname = eventInfo[0]['class_id']; 
+    let classname = eventInfo[0]["class_id"];
 
-    if (!classname) {classname = "";}
+    if (!classname) {
+      classname = "";
+    }
 
     axios
       .get("http://localhost:3000/api/classes/" + classname)
@@ -33,6 +36,18 @@ export default function EventProfile(props) {
         console.log(err);
       });
   }, [classInfo.join(",")]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/eventsub/event/" + currentEvent_id)
+      .then((res) => {
+        setUsersInfo(res.data);
+        console.log(usersInfo);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [usersInfo.join(",")]);
 
   return (
     <div className="event-container">
@@ -55,21 +70,19 @@ export default function EventProfile(props) {
         <div>
           Study session on frontend react hooks happening today!
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            vitae elit eu eros pulvinar tristique ac eu eros. Quisque dictum
-            diam leo, iaculis semper orci consectetur id. Maecenas ligula metus,
-            mollis sit amet pellentesque in, laoreet sed risus. Fusce maximus
-            ante et purus posuere, id lobortis diam placerat. Pellentesque
-            eleifend lobortis sapien. Nunc eu mauris in nibh facilisis aliquet.
-            Integer non pulvinar sapien. Quisque a purus sed enim aliquet
-            fermentum. Etiam vel metus non quam bibendum ultricies ut ut justo.
-            Sed tincidunt facilisis dui quis molestie.
+            During this free workshop we'll explore the most popular
+            Object-oriented programming patterns in JavaScript and learn how the
+            'this' and 'new' keywords are working under-the-hood with the
+            prototype chain. All experience levels welcome!
           </p>
         </div>
       </div>
       <div className="item3">
-        <span>Friends attending: Ali, Will, Heidi, Vince</span>
-        <img
+        <span>Friends attending: </span>
+        {usersInfo.map((user) => {
+          return (<span key={Math.random()*100}>{user['first_name']} {user['last_name']} </span>);
+        })}
+        {/* <img
           src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
           width="50"
           height="50"
@@ -88,7 +101,7 @@ export default function EventProfile(props) {
           src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
           width="50"
           height="50"
-        ></img>
+        ></img> */}
       </div>
       <div className="item4">
         <div>

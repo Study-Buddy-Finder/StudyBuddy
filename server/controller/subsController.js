@@ -91,6 +91,21 @@ subsController.getEventSubs = (req, res, next) => {
       })
       .catch((err) => next(err));
   };
+
+//get all users based on event_id
+subsController.getEventIdSubs = (req, res, next) => {
+  const params = [req.params.event_id];
+  const queryText = `SELECT users.first_name, users.last_name FROM users
+                    LEFT JOIN eventsubs
+                    ON users.user_id = eventsubs.user_id
+                    WHERE eventsubs.event_id = $1;`;
+  db.query(queryText, params)
+    .then((result) => {
+      res.locals.eventIdSubs = result.rows;
+      return next();
+    })
+    .catch((err) => next(err));
+};
   
   //add class subscription edge
   subsController.subEvent = (req, res, next) => {
