@@ -4,6 +4,7 @@ export const AppContext = React.createContext({
   currentSchool_id: "1",
   currentClass_id: "1",
   currentEvent_id: "1",
+  setCurrentUser: ()=> {},
   setCurrentClass_id: () => {},
   setCurrentSchool_id: () => {},
   setCurrentEvent_id: () => {},
