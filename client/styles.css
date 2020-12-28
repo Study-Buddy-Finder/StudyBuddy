@@ -286,45 +286,76 @@ li.navbar_item {
 }
 
 .eventLandingContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-areas: 'classContainer classContainer' 'eventContainer eventContainer';
+    align-items: start;
     margin-top: 1rem;
     background-color: #f1faee;
     border-radius: 10px;
+    justify-content: flex-start;
+    font-size: 18px;
 }
 
 .eventContainer {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
-}
-
-.eventList {
-    display: flex;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 0;
+    border-radius: 10px;
+    grid-area: eventContainer;
 }
 
 .events {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.event {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 1rem;
 }
 
 .classContainer {
-    display: flex;
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 0;
+    border-radius: 10px;
+    grid-area: classContainer;
+}
+
+.classinfos {
     justify-content: center;
+    margin-top: 1rem;
+}
+
+.classItem {
+    margin-top: .3rem;
+}
+
+.eventItem {
+    margin-top: .3rem;
+}
+
+
+/* .eventList {
+    display: flex;
+}
+
+
+
+.event {
+    display: flex;
+    justify-content: start;
     flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
+    align-items: start;
+}
+
+
+
+*/
+
+
+/* .classContainer>div {
+    df
+} */
+
+.signup_link {
+    text-decoration: none;
+    color: black;
 }

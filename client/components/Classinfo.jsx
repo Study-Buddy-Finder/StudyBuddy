@@ -5,10 +5,10 @@ function Classinfo(props) {
     return (
         <div>
            Class info: {props.name} 
-            <div className = "event">
-                <div> Subject : {props.subject} </div>  
+            <div className = "classinfo">
+                <div className ="classItem"> Subject : {props.subject} </div>  
             </div>
-            <div>
+            <div className ="classItem">
               Description: xD
             </div>
          
