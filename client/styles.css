@@ -301,6 +301,13 @@ li.navbar_item {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.name {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .bio {
     padding-top: 10px;
     font-weight: bold;

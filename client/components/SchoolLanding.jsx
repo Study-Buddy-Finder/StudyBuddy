@@ -5,13 +5,15 @@ import { AppContext } from "./ContextProvider";
 
 function SchoolLanding() {
   const { currentSchool_id, user } = useContext(AppContext);
-  const [ school, setSchool ] = useState({school_id: ''})
+  const [school, setSchool] = useState({ school_id: "" });
 
   useEffect(() => {
-    axios(`http://localhost:3000/api/schools/${currentSchool_id}`).then((res) => {
-      setSchool(res.data[0])
-      return
-  });
+    axios(`http://localhost:3000/api/schools/${currentSchool_id}`).then(
+      (res) => {
+        setSchool(res.data[0]);
+        return;
+      }
+    );
   }, [currentSchool_id]);
 
   const subscribeToSchool = (school_id, user_id) => {
@@ -24,18 +26,24 @@ function SchoolLanding() {
       },
       body: { user_id: user_id, school_id: school_id },
     }).then((res) => console.log(res));
-  }
-
+  };
 
   return (
-    <div className = "schoollanding_container">
-      <div className = "schoollanding_schoolinfo">
+    <div className="schoollanding_container">
+      <div className="schoollanding_schoolinfo">
         <p>Welcome to {school.school_name}</p>
         <p>Location: {school.school_location}</p>
-        <button className="generic_button" onClick = {()=>{subscribeToSchool(user.user_id, currentSchool_id)}}>Subscribe to school!</button>
+        <button
+          className="generic_button"
+          onClick={() => {
+            subscribeToSchool(user.user_id, currentSchool_id);
+          }}
+        >
+          Subscribe to school!
+        </button>
       </div>
-      <div className = "schoollanding_schooldescription">
-        <p>School description: "placeholder"</p>
+      <div className="schoollanding_schooldescription">
+        <p>School description: A fine school</p>
       </div>
     </div>
   );

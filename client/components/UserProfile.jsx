@@ -36,7 +36,7 @@ function Userpage() {
       <img className="profilePic" src="/john-smith.jpg"></img>
       <pre>
       <div className="displayName">{user.user_name}</div>
-      <div className="name">Name        {user.first_name, user.last_name} </div>
+      <div className="name">Name            {user.first_name} {user.last_name}</div>
       <div className="location">Location       {user.user_location}</div>
       <div className="contact">Contact         {user.user_email}</div>
       <div className="bio">About Me      I enjoy hiking, reading, and watching TV.</div>

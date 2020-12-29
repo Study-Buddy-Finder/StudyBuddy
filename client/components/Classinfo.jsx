@@ -5,7 +5,6 @@ import { AppContext } from "./ContextProvider";
 // render info of events
 
 function Classinfo(props) {
-    
   const { currentClass_id, user } = useContext(AppContext);
 
   const subscribeToClass = (user_id, class_id) => {
@@ -26,8 +25,14 @@ function Classinfo(props) {
       <div className="classinfo">
         <div className="classItem"> Subject : {props.subject} </div>
       </div>
-      <div className="classItem">Description: xD</div>
-      <button onClick={() => {subscribeToClass(user.user_id, currentClass_id)}}>Subcribe to Class</button>
+      <div className="classItem">Description: A great class</div>
+      <button
+        onClick={() => {
+          subscribeToClass(user.user_id, currentClass_id);
+        }}
+      >
+        Subcribe to Class
+      </button>
     </div>
   );
 }
