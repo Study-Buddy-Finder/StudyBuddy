@@ -52,7 +52,9 @@ class App extends Component {
       <div className="app">
         <AppContext.Provider value={this.state}>
           <div className="header">
+            <img className = "logo" src="/owl.png"/>
             <h1>Study Buddy Finder</h1>
+            
           </div>
           <Switch>
             <Route exact path="/" component={Login} />
