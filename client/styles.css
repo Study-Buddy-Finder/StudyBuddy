@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
 .header {
     font-family: 'Limelight', cursive;
-    color: #dee7ecfd;
-    background-color: #2e30334d;
+    color: #7ac8fb;
+    
     /* position: absolute; */
     top: 0;
     left: 0;
@@ -10,8 +10,15 @@
     height: 100px;
     text-align: center;
     padding: 0;
-    text-shadow: 2px 2px #1e303b;
+    
     font-size: large;
+
+    display: flex;
+    
+}
+
+.logo {
+   object-fit: scale-down;
 }
 
 .app {
@@ -28,7 +35,7 @@
     border: none;
     border-radius: 5px;
     color: rgb(255, 255, 255);
-    background-color: rgb(163, 163, 163);
+    background-color: #7ac8fb;
 }
 
 /* -----------Sidebar------------ */
@@ -78,12 +85,12 @@
     margin-top: 5px;
     border-radius: 5px;
     color: rgb(255, 255, 255);
-    background-color: rgb(163, 163, 163);
+    background-color:#7ac8fb;
 }
 
 .sidebar_button:hover{
     cursor: pointer;
-    background-color: rgb(107, 107, 107);
+    background-color: #3681b3;
 }
 
 .container {
@@ -110,7 +117,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: rgb(196, 196, 204);
+    background-color: #7ac8fb;
     height: 45px;
     border-radius: 7px;
 }
@@ -118,7 +125,7 @@
 .navbar_item {
     font-weight: bold;
     color: black;
-    background-color: rgb(116, 116, 116);
+    background-color: #ffffff;
     border: none;
     outline: none;
     border-radius: 7px;
@@ -126,13 +133,13 @@
 }
 
 .navbar_item:hover{
-    background-color: rgb(78, 78, 78);
+    background-color:#e6e6e6;
     cursor: pointer;
 }
 
 .navbar_link {
     text-decoration: none;
-    color: rgb(230, 230, 230);
+    color: rgb(53, 53, 53);
 }
 
 
@@ -182,10 +189,12 @@
     margin-bottom: 10px;
 }
 
+
 .submitBtn input {
     width: 50%;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius: 7px;
 }
 
 .signupPage {
