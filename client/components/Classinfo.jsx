@@ -5,7 +5,6 @@ import { AppContext } from "./ContextProvider";
 // render info of events
 
 function Classinfo(props) {
-    
   const { currentClass_id, user } = useContext(AppContext);
 
   const subscribeToClass = (user_id, class_id) => {
