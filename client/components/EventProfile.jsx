@@ -76,7 +76,7 @@ export default function EventProfile(props) {
         <p>Time: 8 pm</p>
         <p>Capacity: 35</p>
         <p>Host: Codesmith</p>
-        <button onClick = {()=>{subscribeToEvent(user.user_id, currentEvent_id)}}>Subscribe to event</button>
+        <button className = "generic_button" onClick = {()=>{subscribeToEvent(user.user_id, currentEvent_id)}}>Subscribe to event</button>
       </div>
       <div className="item2">
         <div>
