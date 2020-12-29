@@ -49,15 +49,10 @@ export default function EventProfile(props) {
   }, [usersInfo.join(",")]);
 
   const subscribeToEvent = (user_id, event_id) => {
-    axios({
-      method: "POST",
-      url: "http://localhost:3000/api/eventsub",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-      },
-      body: { user_id: user_id, event_id: event_id },
-    }).then((res) => console.log(res));
+    axios.post("http://localhost:3000/api/eventsub",
+    { user_id: user_id, event_id: event_id }
+    ).then((res) => console.log(res));
+
   }
 
   return (

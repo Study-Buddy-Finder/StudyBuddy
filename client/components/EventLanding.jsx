@@ -66,20 +66,29 @@ function EventLanding() {
 
   return (
     <div className="eventLandingContainer">
-      <div className="classContainer">
-        Current Class id : {currentClass_id}
-        <div className="classinfos">{classInfo}</div>
+      <div className = "some_container">
+        <div className="classContainer">
+          <div className="classinfos">{classInfo}</div>
+        </div>
+        <div className="eventContainer">
+          Event Landing
+          <div className="events">{eventList}</div>
+          <Link
+            className=""
+            to={`${match.path}/createevent`}
+            key={Math.random() * 1000}
+          >
+            <button className="generic_button">Create New Event</button>
+          </Link>
+        </div>
       </div>
-      <div className="eventContainer">
-        Event Landing
-        <div className="events">{eventList}</div>
-        <Link
-          className=""
-          to={`${match.path}/createevent`}
-          key={Math.random() * 1000}
-        >
-          <button className="generic_button">Create New Event</button>
-        </Link>
+
+      <div className = 'img_container'>
+        <img
+          src="https://images.idgesg.net/images/article/2018/11/google-maps-chicago-100780535-large.jpg"
+          width="400"
+          height="200"
+        ></img>
       </div>
     </div>
   );

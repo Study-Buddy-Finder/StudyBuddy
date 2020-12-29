@@ -112,6 +112,7 @@ subsController.getEventIdSubs = (req, res, next) => {
     const params = [req.body.user_id, req.body.event_id];
     const queryText =
       "INSERT INTO public.eventsubs (user_id, event_id) VALUES ($1, $2);";
+    console.log(req.body)
     db.query(queryText, params)
       .then(() => next())
       .catch((err) => next(err));

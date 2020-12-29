@@ -13,7 +13,7 @@ function EventList(props) {
         }}
         className="event"
       >
-        Event: {props.name}
+        <b className = "eventTitle" >Event: {props.name}</b>
         <div className="eventItem"> Location : {props.location} </div>
         <div className="eventItem"> Time: 8 pm </div>
         <div className="eventItem"> Capacity : 35 </div>

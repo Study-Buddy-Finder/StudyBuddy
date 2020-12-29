@@ -43,7 +43,7 @@ schoolsController.getAllSchools = (req, res, next) => {
 schoolsController.updateSchoolName = (req, res, next) => {
   const params = [req.body.school_name, req.params.school_id];
   const queryText =
-    "UPDATE public.users SET school_name = $1 WHERE school_id = $2;";
+    "UPDATE public.schools SET school_name = $1 WHERE school_id = $2;";
   db.query(queryText, params)
     .then((result) => {
       res.locals.schools = result.rows;

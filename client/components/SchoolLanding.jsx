@@ -16,7 +16,8 @@ function SchoolLanding() {
     );
   }, [currentSchool_id]);
 
-  const subscribeToSchool = (school_id, user_id) => {
+  const subscribeToSchool = (user_id, school_id) => {
+    console.log("react function", user_id, school_id)
     axios({
       method: "POST",
       url: "http://localhost:3000/api/schoolsub",

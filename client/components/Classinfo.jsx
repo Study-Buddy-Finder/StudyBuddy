@@ -25,7 +25,7 @@ function Classinfo(props) {
       <div className="classinfo">
         <div className="classItem"> Subject : {props.subject} </div>
       </div>
-      <div className="classItem">Description: xD</div>
+      <div className="classItem">Description: A very great class about learning things. </div>
       <button className = "generic_button" onClick={() => {subscribeToClass(user.user_id, currentClass_id)}}>Subcribe to Class</button>
     </div>
   );

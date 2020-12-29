@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
 .header {
-    font-family: 'Limelight', cursive;
+    font-family: 'Merriweather sans', cursive;
     color: #7ac8fb;
     
     /* position: absolute; */
@@ -337,15 +337,15 @@ li.navbar_item {
 }
 
 .eventContainer {
-    padding: 10px;
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
     margin-bottom: 2rem;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;;
+    padding: 10px;
     border-radius: 10px;
     grid-area: eventContainer;
+    width: 300px
 }
 
 .events {
@@ -376,6 +376,18 @@ li.navbar_item {
     margin-top: .3rem;
 }
 
+.eventTitle {
+    color: rgb(46, 46, 46);
+}
+
+.img_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 25px;
+}
 
 /* .eventList {
     display: flex;
